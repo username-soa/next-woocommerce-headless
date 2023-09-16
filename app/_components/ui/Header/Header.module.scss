@@ -1,0 +1,48 @@
+.container {
+  top: 0;
+  z-index: 10;
+  height: 100px;
+  display: flex;
+  position: sticky;
+
+  nav {
+    // background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: saturate(180%) blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid blue;
+    margin: 0 auto;
+    width: clamp(90%, 70%, 1440px);
+    ul {
+      gap: 3vw;
+      display: flex;
+      list-style: none;
+    }
+    button,
+    a {
+      background-color: transparent;
+      padding: 2px 6px;
+      text-transform: uppercase;
+    }
+  }
+  .test_div {
+    width: 20%;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    aspect-ratio: 1/1;
+    position: absolute;
+    pointer-events: none;
+    border-radius: 9999px;
+    background: radial-gradient(circle, #9f8772 0, rgba(161, 252, 70, 0) 71%);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container {
+    nav {
+      width: 100%;
+      margin: 0 1rem;
+    }
+  }
+}

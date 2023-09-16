@@ -1,0 +1,25 @@
+.page_header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  h1 {
+    font-size: clamp(28px, 18.1408450704px + 1.9718309859vw, 56px);
+    line-height: 100%;
+  }
+}
+.grid {
+  margin-top: clamp(30px, 4vw, 60px);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-auto-flow: row dense;
+  grid-gap: 40px 20px;
+}
+@media only screen and (max-width: 768px) {
+  .page_header {
+    grid-gap: 2em;
+    grid-template-columns: 1fr;
+  }
+  .grid {
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}

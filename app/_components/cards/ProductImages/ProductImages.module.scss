@@ -1,0 +1,12 @@
+.container {
+  gap: 0.11rem;
+  display: flex;
+  flex-direction: column;
+}
+.image_wrp {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  img {
+    object-fit: cover;
+  }
+}

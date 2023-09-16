@@ -1,0 +1,90 @@
+.container {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+  font-weight: 500;
+  padding: 0.4rem 1.1rem;
+  border-radius: 8px;
+  white-space: nowrap;
+  font-family: inherit;
+  text-overflow: ellipsis;
+  transition: all 0.3s ease-in;
+  width: auto;
+  &.large {
+    width: 100%;
+  }
+  &.bordered {
+    border: 2px solid #000;
+  }
+  &.default_btn {
+    color: #fff;
+    background-color: rgb(15, 15, 15);
+  }
+  &.inverted_btn {
+    color: rgb(15, 15, 15);
+    background-color: #fff;
+  }
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+  &.delete_btn {
+    background-color: red;
+    color: #fff;
+  }
+  &.notice_btn {
+    background-color: yellow;
+    color: #fff;
+  }
+  &.add_btn {
+    background-color: green;
+    color: #fff;
+  }
+  &.secondary {
+    color: #313131;
+    background-color: #f1f3f5;
+  }
+  svg {
+    width: 15px !important;
+    height: 15px !important;
+    margin: auto 0;
+  }
+}
+
+.link_btn {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0.4em 1.1em;
+  border-radius: 8px;
+  white-space: nowrap;
+  font-family: inherit;
+  text-overflow: ellipsis;
+  transition: all 0.3s ease-in;
+  &.large {
+    width: 100%;
+  }
+  &.bordered {
+    border: 2px solid #000;
+  }
+  &:disabled {
+    cursor: not-allowed;
+    background-color: #26292b;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+// @media only screen and (max-width: 768px) {
+//   .container,
+//   .link_btn {
+//     padding: 10px 25px;
+//   }
+// }

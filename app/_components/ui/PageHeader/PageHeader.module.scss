@@ -1,0 +1,94 @@
+.collection_hero {
+  gap: 4rem;
+  display: flex;
+  flex-direction: column;
+
+  .collection_top {
+    aspect-ratio: 16 / 7;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 0px 0px 1px,
+      rgba(0, 0, 0, 0.05) 0px 2px 4px, rgba(0, 0, 0, 0.05) 0px 12px 24px;
+    img {
+      transition: transform 0.3s ease-in-out;
+    }
+    &:hover {
+      img {
+        transform: scale(1.03);
+      }
+    }
+  }
+}
+.header_overlay {
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  position: absolute;
+  padding: 0 clamp(20px, 3vw, 60px) clamp(20px, 3vw, 30px)
+    clamp(20px, 3vw, 60px);
+  color: #fff;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  pointer-events: none;
+  .title_h2 {
+    font-size: clamp(40px, 15.3521126761px + 4.9295774648vw, 110px);
+    font-weight: bold;
+    line-height: 100%;
+    background: linear-gradient(180deg, #fff, #adadad);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .title_h6 {
+    font-size: clamp(16px, 14.5915492958px + 0.2816901408vw, 20px);
+    margin-bottom: 0.25rem;
+    line-height: 100%;
+    background: linear-gradient(180deg, #fff, #adadad);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+.collection_desc {
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 22px;
+  font-size: clamp(16px, 13.1830985915px + 0.5633802817vw, 24px);
+  line-height: 200%;
+  h3 {
+    font-weight: 300;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .collection_hero {
+    gap: 1.5rem;
+  }
+  .header_overlay {
+    .title_h2 {
+      font-size: 1.5rem;
+    }
+    .title_h6 {
+      font-size: 0.5rem;
+    }
+  }
+  .collection_desc {
+    font-size: 0.85rem;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .collection_hero {
+    .collection_top {
+      aspect-ratio: 16 / 12;
+    }
+  }
+}

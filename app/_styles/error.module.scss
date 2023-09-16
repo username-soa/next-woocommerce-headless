@@ -1,0 +1,30 @@
+.container {
+  gap: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 100%;
+}
+.container h2 {
+  font-size: 2rem;
+}
+.errorActions {
+  display: flex;
+  gap: 1.5rem;
+}
+.errorActions button,
+.errorActions a {
+  border: none;
+  outline: none;
+  color: #000;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+@media screen and (max-width: 660px) {
+  .container h2 {
+    font-size: 1.5rem;
+  }
+}
