@@ -9,7 +9,7 @@ const Portal = ({ children }) => {
   React.useEffect(() => setMounted(true), []);
 
   return mounted
-    ? createPortal(<>{children}</>, document.querySelector("#myportal"))
+    ? createPortal(<>{children}</>, document.querySelector("#popup-portal"))
     : null;
 };
 export default Portal;

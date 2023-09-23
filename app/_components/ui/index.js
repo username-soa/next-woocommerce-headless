@@ -8,16 +8,18 @@ import Portal from "./Portal";
 import Button from "./ButtonOrLink/ButtonOrLink";
 import BlurredImage from "./BlurredImage/BlurredImage";
 import Search from "./Search";
+import SideMenu from "./SideMenu/SideMenu";
 
 export {
   Cart,
-  Footer,
-  Header,
+  Search,
   Button,
+  Header,
   Portal,
+  Footer,
   Spinner,
+  SideMenu,
   Container,
   PageHeader,
   BlurredImage,
-  Search,
 };

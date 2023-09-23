@@ -3,23 +3,19 @@
   width: 100%;
   opacity: 0.9;
   z-index: 999;
-  // height: 100dvh;
   display: flex;
   position: fixed;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.25);
   backdrop-filter: saturate(150%) blur(8px);
 }
-
 .content {
   margin: 0 auto;
   width: clamp(90%, 70%, 1440px);
   .search_top {
-    // display: grid;
-    padding: 2rem 0;
+    padding: 2rem 0 1rem 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    // grid-template-columns: auto 40px;
     width: 70%;
     margin: 0 auto;
     margin-top: calc(100px - 2rem);
@@ -71,10 +67,92 @@
       }
     }
   }
-  .search_body {
-    background-color: green;
+}
+.saved_search_terms {
+  width: 70%;
+  margin: 1em auto;
+  ul {
+    background: #fff;
+    border-radius: 15px;
+  }
+  ul,
+  li {
+    list-style: none;
+  }
+  .saved_term_span {
+    flex: 1;
+    overflow: hidden;
+    font-size: 1.15rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: rgba(0, 0, 0, 0.7);
+    transition: color 0.3s ease-in-out;
+  }
+  li {
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: flex;
+    gap: 0.5em;
+    padding: 0.5em;
+    min-width: 250px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+
+    .clear_btn {
+      width: 2rem;
+      height: 2rem;
+      transition: all 0.3s ease-in-out;
+      display: inline-flex;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      justify-content: center;
+      user-select: none;
+      border-radius: 0.4rem;
+      background-color: transparent;
+      color: #efeff1;
+      &:hover {
+        background: RGBA(159, 162, 180, 0.125);
+      }
+    }
+    .history_svg {
+      width: 15px;
+      height: 15px;
+      fill: rgba(0, 0, 0, 0.35) !important;
+      margin: auto;
+      path {
+        fill: rgba(0, 0, 0, 0.35) !important;
+        g {
+          fill: rgba(0, 0, 0, 0.35) !important;
+        }
+      }
+    }
+    .delete_svg {
+      width: 10px;
+      height: 10px;
+      fill: rgba(0, 0, 0, 0.7) !important;
+      margin: auto;
+      path {
+        fill: rgba(0, 0, 0, 0.7) !important;
+        g {
+          fill: rgba(0, 0, 0, 0.7) !important;
+        }
+      }
+    }
   }
 }
+
+.hover_grid {
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    color: #000 !important;
+  }
+  .saved_term_span {
+    color: #000;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .content {
     width: 100%;
@@ -85,5 +163,9 @@
       padding: 0;
       height: 100px;
     }
+  }
+  .search_dropdown_elements,
+  .saved_search_terms {
+    width: 100%;
   }
 }

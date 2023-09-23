@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
           <main>{children}</main>
           <Footer />
         </div>
-        <div id="myportal"></div>
+        <div id="popup-portal"></div>
       </body>
     </html>
   );

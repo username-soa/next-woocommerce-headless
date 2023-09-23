@@ -1,19 +1,26 @@
 .container {
   top: 0;
   z-index: 10;
-  height: 100px;
   display: flex;
   position: sticky;
+  padding: 0.75rem 0;
 
   nav {
-    // background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: saturate(180%) blur(8px);
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: 2px solid blue;
     margin: 0 auto;
+    overflow: hidden;
+    padding: 0.75rem 0;
+    backdrop-filter: blur(24px);
+    border: 1px solid #e5e5e5;
     width: clamp(90%, 70%, 1440px);
+    background: hsla(0, 0%, 100%, 0.8);
+    .nav_content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
     ul {
       gap: 3vw;
       display: flex;
@@ -21,28 +28,63 @@
     }
     button,
     a {
+      padding: 0;
+      font-size: 0.95rem;
+      text-transform: capitalize;
       background-color: transparent;
-      padding: 2px 6px;
-      text-transform: uppercase;
+    }
+    .link_hover {
+      position: relative;
+      &:after {
+        left: 0;
+        width: 0;
+        bottom: 4px;
+        height: 1.75px;
+        border-radius: 9999px;
+        content: "";
+        position: absolute;
+        visibility: hidden;
+        background-color: #000;
+        transition: all 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+      }
+      &:hover:after {
+        width: 100%;
+        visibility: visible;
+      }
     }
   }
-  .test_div {
-    width: 20%;
-    top: 0;
-    left: 0;
-    opacity: 0.5;
-    aspect-ratio: 1/1;
-    position: absolute;
-    pointer-events: none;
-    border-radius: 9999px;
-    background: radial-gradient(circle, #9f8772 0, rgba(161, 252, 70, 0) 71%);
-  }
+}
+.menu_btn_wrp {
+  display: none;
 }
 @media only screen and (max-width: 768px) {
   .container {
     nav {
       width: 100%;
       margin: 0 1rem;
+      .header_ul {
+        display: none;
+      }
+    }
+  }
+
+  .menu_btn_wrp {
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: #000;
+      transition: transform 0.3s ease;
+    }
+    &:hover {
+      svg {
+        transform: scale(1.1);
+      }
     }
   }
 }

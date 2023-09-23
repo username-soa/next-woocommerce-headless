@@ -15,6 +15,14 @@
   border-radius: 12px;
   transition: all 0.3s;
   aspect-ratio: 16 / 12;
+  div {
+    transition: transform 0.3s ease;
+  }
+  &:hover {
+    div {
+      transform: scale(1.05);
+    }
+  }
 }
 .card_extra {
   padding-top: 0.75rem;

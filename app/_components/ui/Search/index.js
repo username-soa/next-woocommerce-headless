@@ -4,34 +4,62 @@ import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useContext, useEffect } from "react";
 import { SearchHistoryContext } from "@/utils/SearchHistoryContext";
-import useBodyLockScroll from "@/hooks/useBodyLockScroll";
 
 const Search = ({ handleClose }) => {
   let isMounted = true;
-  const HeaderSearchBarVariants = {
-    hidden: { y: "-100vh" },
-    visible: {
-      y: 0,
-      //   transition: {
-      //     type: "Inertia",
-      //   },
+  const backgroundAnimation = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
     },
+    exit: { opacity: 0, transition: { duration: 0.3, type: "Inertia" } },
   };
+
   const parentAnimations = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: { staggerChildren: 0.3 },
+      transition: {
+        delay: 0.3,
+        delayChildren: 0.15,
+        staggerChildren: 0.5,
+      },
     },
   };
   const childAnimations = {
+    hidden: { opacity: 0, y: "10px" },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        ease: [0, 1.5, 1, 1.5],
+        type: "spring",
+      },
+    },
+  };
+  const searchHistoryVariables = {
+    hidden: { opacity: 0, y: "10px" },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.5,
+        delayChildren: 0.6,
+        staggerChildren: 0.25,
+      },
+    },
+  };
+  const searchHistoryChildAnimations = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
+      transition: {
+        ease: [0, 1.5, 1, 1.5],
+        type: "spring",
+      },
     },
   };
   const route = useRouter();
-  const [search, setSearch] = useState("");
   const [searchArr, setSearchArr] = useState([]);
   const [showHistory, setShowHistory] = useState(false);
   const { saveSearchTermsToBrowser, searchTerms, removeSearchTerm } =
@@ -42,7 +70,7 @@ const Search = ({ handleClose }) => {
     if (e.key === "Enter" && t.length !== 0) {
       saveSearchTermsToBrowser(t);
       setShowHistory(false);
-      setState(false);
+      handleClose();
       route.push(`/search/${t}`);
     }
   };
@@ -51,7 +79,7 @@ const Search = ({ handleClose }) => {
     if (t.trim().length !== 0) {
       saveSearchTermsToBrowser(t);
       setShowHistory(false);
-      setState(false);
+      handleClose();
       route.push(`/search/${t}`);
     }
   };
@@ -77,15 +105,21 @@ const Search = ({ handleClose }) => {
   }, [searchTerms]);
   return (
     <motion.div
-      className={styles.container}
-      initial="hidden"
+      exit="exit"
       animate="show"
-      variants={parentAnimations}
-      exit={{ opacity: 0, transition: { duration: 0.5, type: "Inertia" } }}
+      initial="hidden"
+      className={styles.container}
+      variants={backgroundAnimation}
     >
       <div className={styles.content}>
-        <div className={styles.search_top}>
-          <div className={styles.input_wrp}>
+        <motion.div
+          exit="exit"
+          animate="show"
+          initial="hidden"
+          variants={parentAnimations}
+          className={styles.search_top}
+        >
+          <motion.div variants={childAnimations} className={styles.input_wrp}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
@@ -101,19 +135,17 @@ const Search = ({ handleClose }) => {
             </svg>
             <input
               type="text"
-              onChange={(e) => {
-                setSearch(e.target.value);
-                filterSearchHistory(e.target.value);
-              }}
+              onChange={(e) => filterSearchHistory(e.target.value)}
               placeholder="Search Products, Collections..."
               className={styles.search_input}
               autoFocus
               onKeyDown={handleSearch}
               onFocus={() => setShowHistory(true)}
             />
-          </div>
+          </motion.div>
 
-          <svg
+          <motion.svg
+            variants={childAnimations}
             onClick={handleClose}
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
@@ -123,47 +155,56 @@ const Search = ({ handleClose }) => {
             viewBox="0 0 50 50"
           >
             <path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"></path>
-          </svg>
-        </div>
+          </motion.svg>
+        </motion.div>
         <div className={styles.search_body}>
           <AnimatePresence mode="wait">
             {showHistory && searchArr?.length !== 0 && (
-              <motion.div
-                initial="hidden"
-                animate="show"
-                variants={parentAnimations}
-                className="saved-search-terms"
-              >
-                <ul>
+              <div className={styles.saved_search_terms}>
+                <motion.ul
+                  exit="exit"
+                  animate="show"
+                  initial="hidden"
+                  variants={searchHistoryVariables}
+                >
                   {searchArr?.map((i, index) => {
                     return (
                       <motion.li
-                        variants={childAnimations}
-                        className="saved-term hover-grid"
                         key={`saved-term-${index}`}
+                        className={styles.hover_grid}
+                        variants={searchHistoryChildAnimations}
                       >
-                        <span
-                          className="saved-term-span"
+                        <svg className={styles.history_svg} viewBox="0 0 20 20">
+                          <path d="M5.757 14.243A6 6 0 1 0 5.527 6H7v2H2V3h2v1.708a8 8 0 1 1 .343 10.949l1.414-1.414z"></path>
+                          <path d="m11 10.414 1.707-1.707-1.414-1.414L9 9.586V14h2v-3.586z"></path>
+                        </svg>
+                        <p
+                          className={styles.saved_term_span}
                           onClick={() => handleSearchV2(i)}
                         >
                           {i}
-                        </span>
-                        <svg
+                        </p>
+                        <button
                           onClick={() => removeSearchTerm(i)}
-                          xmlns="http://www.w3.org/2000/svg"
-                          x="0px"
-                          y="0px"
-                          width="100"
-                          height="100"
-                          viewBox="0 0 50 50"
+                          className={styles.clear_btn}
                         >
-                          <path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"></path>
-                        </svg>
+                          <svg
+                            className={styles.delete_svg}
+                            xmlns="http://www.w3.org/2000/svg"
+                            x="0px"
+                            y="0px"
+                            width="100"
+                            height="100"
+                            viewBox="0 0 50 50"
+                          >
+                            <path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"></path>
+                          </svg>
+                        </button>
                       </motion.li>
                     );
                   })}
-                </ul>
-              </motion.div>
+                </motion.ul>
+              </div>
             )}
           </AnimatePresence>
         </div>

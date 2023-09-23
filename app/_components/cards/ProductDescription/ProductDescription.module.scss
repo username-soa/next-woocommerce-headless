@@ -1,7 +1,32 @@
 .container {
+  top: 100px;
+  height: 100vh;
   padding: 1rem;
   position: sticky;
-  top: 100px;
-  background-color: red;
-  height: 100vh;
+  .top {
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  h1 {
+    line-height: 1;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+  }
+  .pricing_wrp {
+    padding: 0.5rem;
+    width: fit-content;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    border-radius: 9999px;
+    box-shadow: transparent, 0 0 #0000;
+    background-color: rgb(245 245 245/1);
+  }
+  .product_description {
+    line-height: 1.25;
+    font-size: 0.875rem;
+    color: rgb(0 0 0/1);
+    margin-bottom: 1.5rem;
+  }
 }

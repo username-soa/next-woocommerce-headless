@@ -1,104 +1,128 @@
 "use client";
-import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import styles from "./Header.module.scss";
-import useBodyLockScroll from "@/hooks/useBodyLockScroll";
-import useScrollIndicator from "@/hooks/useScrollIndicator";
 import {
   motion,
+  useSpring,
   useScroll,
   useTransform,
-  useMotionValue,
   AnimatePresence,
-  useMotionValueEvent,
 } from "framer-motion";
-import { Cart, Portal, Search } from "@/components/ui";
+import { Cart, Portal, Search, SideMenu } from "@/components/ui";
 
-// TODO fix scroll based animations
 const Header = () => {
-  const y = useMotionValue(0);
-  const { scrollYProgress, scrollY } = useScroll();
-
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    console.log(latest * 10);
-    y.set(latest * 10);
+  const { scrollY } = useScroll();
+  const padding = useTransform(scrollY, [0, 100], [0, 15]);
+  const radius = useTransform(scrollY, [0, 100], [0, 15]);
+  const borderWidth = useTransform(scrollY, [0, 100], [0, 1]);
+  const springRadius = useSpring(radius);
+  const springPadding = useSpring(padding);
+  const [popovers, setPopovers] = useState({
+    cart: false,
+    search: false,
+    menu: false,
   });
-  const opacity = useTransform(
-    y,
-    // Map x from these values:
-    [0, 30],
-    // Into these values:
-    [0, 1]
-  );
-  console.log("opacity is: ", opacity);
-  const [popovers, setPopovers] = useState({ cart: false, search: false });
-  useEffect(() => {
-    console.log("popovers state changed : ", popovers);
-  }, [popovers]);
-  // useBodyLockScroll(popovers.cart || popovers.search);
-  // const { scrollY } = useScroll();
-  // const x = useMotionValue(scrollY);
-  // const opacity = useTransform(
-  //   x,
-  //   // Map x from these values:
-  //   [0, 600],
-  //   // Into these values:
-  //   [0, 1]
-  // );
 
-  // console.log(opacity);
-  // useMotionValueEvent(scrollY, "change", (latest) => {
-  // console.log("Page scroll: ", latest);
-  // });
-  // const { padding, boxShadow } = useScrollIndicator();
+  useEffect(() => {
+    console.log("popovers sate changed : ", popovers);
+  }, [popovers]);
+
   return (
-    <header className={styles.container}>
+    <motion.header className={styles.container}>
       <motion.nav
-        animate={{
-          opacity: y,
-          // borderRadius: y * 10,
-          // paddingTop: `${y}px`,
-          // paddingBottom: `${y / 2}px`,
-          // borderBottom: `2px solid rgb(0 0 0 / ${y})`,
-          // boxShadow: `rgb(0 0 0 / ${y}) 0px 0px 20px 6px`,
+        style={{
+          borderWidth: borderWidth,
+          borderRadius: springRadius,
         }}
       >
-        <Link href={"/collections"}>Collections</Link>
-        <Link href="/">Logo</Link>
-        <ul>
-          <li>
-            <button
-              type="button"
-              title="search"
-              onClick={() =>
-                setPopovers((prevState) => {
-                  return {
-                    ...prevState,
-                    search: !prevState.search,
-                  };
-                })
-              }
+        <motion.div
+          style={{
+            borderWidth: borderWidth,
+            borderRadius: springRadius,
+            paddingLeft: springPadding,
+            paddingRight: springPadding,
+          }}
+          className={styles.nav_content}
+        >
+          <ul className={styles.header_ul}>
+            <li>
+              <Link href={"/best-selling"} className={styles.link_hover}>
+                Best Selling
+              </Link>
+            </li>
+            <li>
+              <Link href={"/brand"} className={styles.link_hover}>
+                Brand
+              </Link>
+            </li>
+          </ul>
+          <Link href={"/"}>VaseStylé</Link>
+          <ul className={styles.header_ul}>
+            <li>
+              <button
+                className={styles.link_hover}
+                type="button"
+                title="search"
+                onClick={() =>
+                  setPopovers((prevState) => {
+                    return {
+                      ...prevState,
+                      search: !prevState.search,
+                    };
+                  })
+                }
+              >
+                Search
+              </button>
+            </li>
+            <li>
+              <button
+                className={styles.link_hover}
+                type="button"
+                title="cart"
+                onClick={() =>
+                  setPopovers((prevState) => {
+                    return {
+                      ...prevState,
+                      cart: !prevState.cart,
+                    };
+                  })
+                }
+              >
+                bag [0]
+              </button>
+            </li>
+          </ul>
+          <button
+            type="button"
+            title="menu button"
+            className={styles.menu_btn_wrp}
+            onClick={() =>
+              setPopovers((prevState) => {
+                return {
+                  ...prevState,
+                  menu: !prevState.menu,
+                };
+              })
+            }
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              aria-hidden="true"
             >
-              Search
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              title="cart"
-              onClick={() =>
-                setPopovers((prevState) => {
-                  return {
-                    ...prevState,
-                    cart: !prevState.cart,
-                  };
-                })
-              }
-            >
-              cart
-            </button>
-          </li>
-        </ul>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              ></path>
+            </svg>
+          </button>
+        </motion.div>
       </motion.nav>
       <Portal>
         <AnimatePresence mode="wait">
@@ -132,7 +156,41 @@ const Header = () => {
           )}
         </AnimatePresence>
       </Portal>
-    </header>
+      <Portal>
+        <AnimatePresence mode="wait">
+          {popovers.menu && (
+            <SideMenu
+              handleClose={() =>
+                setPopovers((prevState) => {
+                  return {
+                    ...prevState,
+                    menu: !prevState.menu,
+                  };
+                })
+              }
+              handleCart={() =>
+                setPopovers((prevState) => {
+                  return {
+                    ...prevState,
+                    menu: !prevState.menu,
+                    cart: !prevState.cart,
+                  };
+                })
+              }
+              handleSearch={() =>
+                setPopovers((prevState) => {
+                  return {
+                    ...prevState,
+                    search: !prevState.search,
+                    menu: !prevState.menu,
+                  };
+                })
+              }
+            />
+          )}
+        </AnimatePresence>
+      </Portal>
+    </motion.header>
   );
 };
 

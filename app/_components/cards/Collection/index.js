@@ -16,7 +16,7 @@ const Collection = ({ title, slug, image, alt }) => {
         </div>
         <div className={styles.card_hover}>
           <div className={styles.btn_wrp}>
-            <Button title="View products" intent="inverted" />
+            <Button title="View Products" intent="inverted" />
           </div>
           <div className={styles.card_hover_content}>
             <span>Collection</span>
