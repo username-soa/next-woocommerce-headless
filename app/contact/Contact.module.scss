@@ -1,9 +1,156 @@
-.container {
-  flex: 1;
-  gap: 0.5rem;
+.grid {
+  gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  line-height: 100%;
+  margin: 0 auto;
+  padding: 4rem 0;
+  width: clamp(90%, 70%, 1440px);
+}
+.links_wrp {
+  gap: 1.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  > div {
+    width: 100%;
+  }
+}
+.custom_link {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e5e5;
+  &:hover {
+    .link_top {
+      p {
+        transform: translateX(20px);
+      }
+    }
+    .share_svg {
+      transform: rotate(45deg);
+    }
+  }
+  .link_top {
+    flex: 1;
+    width: 100%;
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+    p {
+      font-size: 2rem;
+      font-weight: 300;
+      letter-spacing: 0;
+      line-height: 2rem;
+      transition: all 0.3s ease;
+    }
+  }
+  svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: #000;
+  }
+  .share_svg {
+    width: 19px;
+    height: 19px;
+    transition: all 0.3s ease;
+  }
+}
+
+.content {
+  gap: 0.25rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  line-height: 100%;
+  h1 {
+    font-size: 120px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 120px;
+    padding-bottom: 1rem;
+  }
+  h6 {
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 45px;
+  }
+
+  p {
+    font-weight: 400;
+    line-height: 26px;
+    padding-bottom: 1rem;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .custom_link {
+    .link_top {
+      p {
+        font-size: 1.5rem;
+      }
+    }
+    svg {
+      width: 2rem;
+      height: 2rem;
+    }
+    .share_svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .grid {
+    gap: 2rem;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+    width: 100%;
+    margin: 0 1rem;
+  }
+  .content {
+    height: fit-content;
+  }
+  .links_wrp {
+    &:first-child {
+      border-top: 1px solid #e5e5e5;
+    }
+  }
+  .custom_link {
+    align-items: flex-end;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    flex-direction: column;
+    .link_top {
+      gap: 0.5rem;
+      p {
+        font-size: 1.1rem;
+      }
+    }
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+    .share_svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+  .content {
+    h1 {
+      font-size: 2rem;
+      line-height: 2rem;
+    }
+    h6 {
+      font-size: 1rem;
+      line-height: 1.25rem;
+    }
+
+    p {
+      line-height: 1.5rem;
+      padding-bottom: 0;
+    }
+  }
 }
