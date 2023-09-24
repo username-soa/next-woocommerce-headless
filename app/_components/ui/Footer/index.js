@@ -6,7 +6,10 @@ const Footer = () => {
     <footer className={styles.container}>
       <ul>
         <li>
-          <Link href={`/shipping`}>SHIPPING & RETURNS</Link>
+          <Link href={`/shipping`}>DELIVERY & RETURN</Link>
+        </li>
+        <li>
+          <Link href={`/payement`}>PAYMENT METHOD</Link>
         </li>
         <li>
           <Link href={`/contact`}>contact</Link>

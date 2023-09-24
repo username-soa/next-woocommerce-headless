@@ -3,7 +3,7 @@ import styles from "./Search.module.scss";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useContext, useEffect } from "react";
-import { SearchHistoryContext } from "@/utils/SearchHistoryContext";
+import { SearchHistoryContext } from "@/contexts/SearchHistoryContext";
 
 const Search = ({ handleClose }) => {
   let isMounted = true;

@@ -5,8 +5,8 @@
       "@/components/*": ["app/_components/*"],
       "@/styles/*": ["app/_styles/*"],
       "@/hooks/*": ["hooks/*"],
-      "@/contexts/*": ["utils/*"],
-      "@/utils/*": ["contexts/*"]
+      "@/contexts/*": ["contexts/*"],
+      "@/utils/*": ["utils/*"]
     }
   }
 }

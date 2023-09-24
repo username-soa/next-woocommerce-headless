@@ -1,9 +1,9 @@
 import styles from "./Collection.module.scss";
 import { Container } from "@/components/ui";
 import { Collection } from "@/components/cards";
-import { collections } from "../../utils/data";
+import { collections } from "@/utils/data";
 
-const page = () => {
+const Collections = () => {
   return (
     <Container>
       <div className={styles.page_header}>
@@ -39,4 +39,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Collections;

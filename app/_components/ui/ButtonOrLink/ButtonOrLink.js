@@ -25,6 +25,15 @@ const Button = ({
           },
           {
             [styles.bordered]: border,
+          },
+          {
+            [styles.default_btn]: intent === "default",
+          },
+          {
+            [styles.inverted_btn]: intent === "inverted",
+          },
+          {
+            [styles.secondary]: intent === "secondary",
           }
         )}
       >

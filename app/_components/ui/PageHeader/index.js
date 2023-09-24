@@ -28,14 +28,14 @@ const PageHeader = ({ title, image, description, qte }) => {
     >
       <div className={styles.collection_top}>
         <Image
-          alt="Mountains"
-          src={image}
-          quality={100}
           fill
+          src={image}
           sizes="100vw"
+          quality={100}
           style={{
             objectFit: "cover",
           }}
+          alt={`${title}-image`}
         />
         <div className={styles.header_overlay}>
           <motion.h6 className={styles.title_h6}>{products_qte}</motion.h6>
@@ -45,13 +45,13 @@ const PageHeader = ({ title, image, description, qte }) => {
         </div>
       </div>
       <div className={styles.collection_desc}>
-        <h3>
+        <p>
           Le Lorem Ipsum est simplement du faux texte employé dans la
           composition et la mise en page avant impression. Le Lorem Ipsum est le
           faux texte standard de l'imprimerie depuis les années 1500, quand un
           imprimeur anonyme assembla ensemble des morceaux de texte pour
           réaliser un livre spécimen de polices de texte.
-        </h3>
+        </p>
       </div>
     </motion.div>
   );

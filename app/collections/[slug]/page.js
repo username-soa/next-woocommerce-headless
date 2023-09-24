@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { ProductCard } from "@/components/cards";
 import styles from "./CollectionDetails.module.scss";
 import { PageHeader, Container } from "@/components/ui";
-import { collections, products } from "../../../utils/data";
+import { collections, products } from "@/utils/data";
 
 async function getData(slug) {
   const result = collections.filter((item) => item.slug === slug);
