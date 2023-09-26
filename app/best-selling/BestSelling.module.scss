@@ -1,0 +1,13 @@
+.grid {
+  margin-top: clamp(30px, 4vw, 60px);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-auto-flow: row dense;
+  grid-gap: 1rem;
+}
+@media only screen and (max-width: 768px) {
+  .grid {
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}

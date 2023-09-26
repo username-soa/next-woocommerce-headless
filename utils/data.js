@@ -1,7 +1,7 @@
 const collections = [
   {
-    title: "Collection name 1",
-    slug: "collection-name-1",
+    title: "Best Selling",
+    slug: "best-selling",
     image: "/images/collections/collection1.PNG",
   },
   {

@@ -3,11 +3,11 @@
   gap: 1.5rem;
   display: flex;
   overflow: hidden;
-  padding-top: 1rem;
+  padding-top: 2rem;
   flex-direction: column;
 }
 .content {
-  flex: 2;
+  flex: 1;
   gap: 2rem;
   display: flex;
   align-items: center;
@@ -20,7 +20,7 @@
   }
 }
 .stream_container {
-  flex: 1;
+  flex: 1.25;
   gap: 25px;
   width: 200vw;
   display: flex;
@@ -91,7 +91,8 @@
     p {
       width: 100%;
       max-width: unset;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
+      text-align: justify;
     }
   }
 }

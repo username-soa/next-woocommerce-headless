@@ -27,7 +27,7 @@
       justify-content: center;
       padding: 8px 0;
       font-size: 1.25rem;
-      border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.5);
       .input_svg {
         cursor: none;
       }
@@ -58,11 +58,11 @@
       margin: auto;
       width: 26px;
       height: 26px;
-      fill: rgba(0, 0, 0, 0.35) !important;
+      fill: rgba(255, 255, 255, 0.5) !important;
       path {
-        fill: rgba(0, 0, 0, 0.35) !important;
+        fill: rgba(255, 255, 255, 0.5) !important;
         g {
-          fill: rgba(0, 0, 0, 0.35) !important;
+          fill: rgba(255, 255, 255, 0.5) !important;
         }
       }
     }
