@@ -4,6 +4,8 @@ import { ProductCard } from "@/components/cards";
 import { collections, products } from "@/utils/data";
 import { PageHeader, Container } from "@/components/ui";
 
+// TODO generate dynamic metadata
+
 async function getData(slug) {
   const result = collections.filter((item) => item.slug === slug);
   if (!result || result.length === 0)

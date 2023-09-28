@@ -1,14 +1,15 @@
 import Cart from "./Cart";
+import Search from "./Search";
 import Footer from "./Footer";
 import Header from "./Header";
+import Portal from "./Portal";
 import Spinner from "./Spinner";
 import Container from "./Container";
 import PageHeader from "./PageHeader";
-import Portal from "./Portal";
+import BrandHeader from "./BrandHeader";
+import SideMenu from "./SideMenu/SideMenu";
 import Button from "./ButtonOrLink/ButtonOrLink";
 import BlurredImage from "./BlurredImage/BlurredImage";
-import Search from "./Search";
-import SideMenu from "./SideMenu/SideMenu";
 
 export {
   Cart,
@@ -21,5 +22,6 @@ export {
   SideMenu,
   Container,
   PageHeader,
+  BrandHeader,
   BlurredImage,
 };

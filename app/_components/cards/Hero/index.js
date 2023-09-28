@@ -6,7 +6,7 @@ import { BlurredImage, Button } from "@/components/ui";
 import { motion, useSpring, useScroll, useTransform } from "framer-motion";
 
 const Hero = () => {
-  const { scrollY, scrollYProgress } = useScroll();
+  const { scrollY } = useScroll();
 
   const x = useTransform(scrollY, [0, 100], [0, -100]);
   const scale = useTransform(scrollY, [0, 100], [1, 1.15]);

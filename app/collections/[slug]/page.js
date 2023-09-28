@@ -4,6 +4,8 @@ import styles from "./CollectionDetails.module.scss";
 import { PageHeader, Container } from "@/components/ui";
 import { collections, products } from "@/utils/data";
 
+// TODO generate dynamic metadata
+
 async function getData(slug) {
   const result = collections.filter((item) => item.slug === slug);
   if (!result || result.length === 0)

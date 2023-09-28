@@ -1,4 +1,4 @@
-export function cx(...classnames) {
+function cx(...classnames) {
   return classnames
     .map((item) => {
       if (typeof item === "string") {
@@ -15,3 +15,12 @@ export function cx(...classnames) {
     })
     .join(" ");
 }
+
+const createUrl = (pathname, params) => {
+  const paramsString = params.toString();
+  const queryString = `${paramsString.length ? "?" : ""}${paramsString}`;
+
+  return `${pathname}${queryString}`;
+};
+
+export { cx, createUrl };

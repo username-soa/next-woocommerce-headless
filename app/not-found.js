@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Button } from "@/components/ui";
 import styles from "@/styles/not-found.module.scss";
 
 export default function NotFound() {
@@ -7,9 +7,7 @@ export default function NotFound() {
       <h2>Not Found</h2>
       <p>Could not find requested resource</p>
       <div className={styles.error_actions}>
-        <Link href={"/"}>
-          <button>Go back home</button>
-        </Link>
+        <Button href={"/"} intent="secondary" title="Go back home" />
       </div>
     </div>
   );

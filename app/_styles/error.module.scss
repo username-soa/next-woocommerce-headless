@@ -14,14 +14,6 @@
   display: flex;
   gap: 1.5rem;
 }
-.errorActions button,
-.errorActions a {
-  border: none;
-  outline: none;
-  color: #000;
-  cursor: pointer;
-  background-color: transparent;
-}
 
 @media screen and (max-width: 660px) {
   .container h2 {

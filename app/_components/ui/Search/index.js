@@ -1,8 +1,9 @@
 "use client";
 import styles from "./Search.module.scss";
-import { useRouter } from "next/navigation";
+import { createUrl } from "@/utils/functions";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useContext, useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { SearchHistoryContext } from "@/contexts/SearchHistoryContext";
 
 const Search = ({ handleClose }) => {
@@ -60,27 +61,32 @@ const Search = ({ handleClose }) => {
     },
   };
   const route = useRouter();
+  const searchParams = useSearchParams();
   const [searchArr, setSearchArr] = useState([]);
   const [showHistory, setShowHistory] = useState(false);
   const { saveSearchTermsToBrowser, searchTerms, removeSearchTerm } =
     useContext(SearchHistoryContext);
 
   const handleSearch = (e) => {
-    const t = e.target.value.trim();
-    if (e.key === "Enter" && t.length !== 0) {
-      saveSearchTermsToBrowser(t);
-      setShowHistory(false);
+    const term = e.target.value.trim();
+    const newParams = new URLSearchParams(searchParams.toString());
+    if (e.key === "Enter" && term.length !== 0) {
+      newParams.set("q", term);
+      saveSearchTermsToBrowser(term);
       handleClose();
-      route.push(`/search/${t}`);
+      route.push(createUrl("/search", newParams));
+    } else {
+      newParams.delete("q");
     }
   };
-  const handleSearchV2 = (term) => {
-    const t = term.trim();
-    if (t.trim().length !== 0) {
-      saveSearchTermsToBrowser(t);
-      setShowHistory(false);
+  const handleSearchV2 = (value) => {
+    const term = value.trim();
+    const newParams = new URLSearchParams(searchParams.toString());
+    if (term.trim().length !== 0) {
+      newParams.set("q", term);
+      saveSearchTermsToBrowser(term);
       handleClose();
-      route.push(`/search/${t}`);
+      route.push(createUrl("/search", newParams));
     }
   };
 
@@ -135,12 +141,14 @@ const Search = ({ handleClose }) => {
             </svg>
             <input
               type="text"
-              onChange={(e) => filterSearchHistory(e.target.value)}
-              placeholder="Search Products, Collections..."
-              className={styles.search_input}
               autoFocus
+              autoComplete="off"
               onKeyDown={handleSearch}
+              className={styles.search_input}
               onFocus={() => setShowHistory(true)}
+              defaultValue={searchParams?.get("q") || ""}
+              placeholder="Search Products, Collections..."
+              onChange={(e) => filterSearchHistory(e.target.value)}
             />
           </motion.div>
 

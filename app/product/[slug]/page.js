@@ -3,6 +3,8 @@ import { products } from "../../../utils/data";
 import styles from "./ProductDetails.module.scss";
 import { ProductImages, ProductDescription } from "@/components/cards";
 
+// TODO add dynamic metadata for products
+
 async function getData(slug) {
   const result = products.filter((item) => item.slug === slug);
   if (!result || result.length === 0)

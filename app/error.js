@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+import { Button } from "@/components/ui";
 import styles from "@/styles/error.module.scss";
 
 const Error = ({ error, reset }) => {
@@ -8,9 +8,7 @@ const Error = ({ error, reset }) => {
       <h2>{error.message}</h2>
       <div className={styles.errorActions}>
         <button onClick={() => reset()}>Try again</button>
-        <Link href={"/"}>
-          <button>Go back home</button>
-        </Link>
+        <Button href={"/"} intent="secondary" title="Go back home" />
       </div>
     </div>
   );

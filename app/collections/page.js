@@ -3,6 +3,11 @@ import { Container } from "@/components/ui";
 import { Collection } from "@/components/cards";
 import { collections } from "@/utils/data";
 
+export const metadata = {
+  title: "Collections",
+  description: "VaseStylé collections list",
+};
+
 const Collections = () => {
   return (
     <Container>
