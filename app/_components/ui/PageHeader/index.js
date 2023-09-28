@@ -37,7 +37,7 @@ const PageHeader = ({ title, image, description, qte }) => {
     },
   };
   const { scrollY } = useScroll();
-  const scale = useTransform(scrollY, [0, 100], [1.02, 1.04]);
+  const scale = useTransform(scrollY, [0, 50], [1.01, 1.08]);
   const springScale = useSpring(scale);
   const products_qte = qte > 1 ? `${qte} Products` : `${qte} Product`;
   return (

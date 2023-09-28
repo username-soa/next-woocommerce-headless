@@ -1,15 +1,17 @@
+import Hero from "./Hero";
 import Collection from "./Collection";
 import ProductCard from "./ProductCard";
 import ProductInfo from "./ProductInfo";
+import CartItem from "./CartItem/CartItem";
 import ProductImages from "./ProductImages";
 import ProductDescription from "./ProductDescription/ProductDescription";
-import CartItem from "./CartItem/CartItem";
 
 export {
+  Hero,
+  CartItem,
   Collection,
   ProductCard,
-  ProductImages,
   ProductInfo,
+  ProductImages,
   ProductDescription,
-  CartItem,
 };

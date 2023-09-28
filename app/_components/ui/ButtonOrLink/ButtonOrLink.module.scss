@@ -12,7 +12,7 @@
   font-family: inherit;
   text-overflow: ellipsis;
   transition: all 0.3s ease-in;
-  width: auto;
+  width: fit-content;
   &.large {
     width: 100%;
   }
@@ -67,6 +67,7 @@
   font-family: inherit;
   text-overflow: ellipsis;
   transition: all 0.3s ease-in;
+  width: fit-content;
   &.large {
     width: 100%;
   }
