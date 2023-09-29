@@ -1,7 +1,7 @@
 import "./globals.scss";
 import { Inter } from "next/font/google";
 import { Footer, Header } from "@/components/ui";
-import SearchHistoryProvider from "@/utils/SearchHistoryContext";
+import SearchHistoryProvider from "@/contexts/SearchHistoryContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
