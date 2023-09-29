@@ -56,7 +56,7 @@ const Contact = () => {
         <motion.h6 variants={childAnimation}>Contact US</motion.h6>
         <motion.h1 variants={childAnimation}>SAY HI!</motion.h1>
         <motion.p variants={childAnimation}>
-          We'&apos;d love to hear from you! Get in touch and our team will be
+          We&apos;d love to hear from you! Get in touch and our team will be
           with you as soon as possible.
         </motion.p>
       </div>
