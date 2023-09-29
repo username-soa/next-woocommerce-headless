@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import styles from "./Header.module.scss";
 import {
@@ -12,6 +13,7 @@ import {
 import { Cart, Portal, Search, SideMenu } from "@/components/ui";
 
 const Header = () => {
+  const path = usePathname();
   const { scrollY } = useScroll();
   const padding = useTransform(scrollY, [0, 100], [0, 15]);
   const radius = useTransform(scrollY, [0, 100], [0, 15]);
@@ -25,8 +27,15 @@ const Header = () => {
   });
 
   useEffect(() => {
-    console.log("popovers sate changed : ", popovers);
-  }, [popovers]);
+    popovers.menu === true
+      ? setPopovers((prevState) => {
+          return {
+            ...prevState,
+            menu: false,
+          };
+        })
+      : null;
+  }, [path]);
 
   return (
     <motion.header className={styles.container}>

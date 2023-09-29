@@ -2,8 +2,10 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import styles from "./SideMenu.module.scss";
+import { usePathname } from "next/navigation";
 
 const SideMenu = ({ handleClose, handleSearch, handleCart }) => {
+  const path = usePathname();
   const backgroundAnimation = {
     hidden: { opacity: 0 },
     show: {
@@ -35,6 +37,13 @@ const SideMenu = ({ handleClose, handleSearch, handleCart }) => {
     },
     exit: { opacity: 0 },
   };
+  const links = [
+    { name: "Brand", href: "/brand", category: 1 },
+    { name: "Collections", href: "/collections", category: 1 },
+    { name: "Best Selling", href: "/best-selling", category: 1 },
+    { name: "contact", href: "/contact", category: 2 },
+    { name: "shipping", href: "/shipping", category: 2 },
+  ];
   return (
     <motion.div
       exit="exit"
@@ -44,7 +53,14 @@ const SideMenu = ({ handleClose, handleSearch, handleCart }) => {
       variants={backgroundAnimation}
     >
       <div className={styles.top}>
-        <Link href={"/"}>VaseStylé</Link>
+        <Link
+          onClick={() => {
+            if ("/" === path) handleClose();
+          }}
+          href={"/"}
+        >
+          VaseStylé
+        </Link>
         <button onClick={handleClose} className={styles.close_btn}>
           <svg
             viewBox="0 0 24 24"
@@ -60,21 +76,22 @@ const SideMenu = ({ handleClose, handleSearch, handleCart }) => {
       </div>
       <div className={styles.content}>
         <ul className={styles.header_ul}>
-          <motion.li variants={childAnimation}>
-            <Link href={"/brand"} className={styles.link_hover}>
-              Brand
-            </Link>
-          </motion.li>
-          <motion.li variants={childAnimation}>
-            <Link href={"/collections"} className={styles.link_hover}>
-              Collections
-            </Link>
-          </motion.li>
-          <motion.li variants={childAnimation}>
-            <Link href={"/best-selling"} className={styles.link_hover}>
-              Best Selling
-            </Link>
-          </motion.li>
+          {links.map((item, index) =>
+            item.category === 1 ? (
+              <motion.li
+                onClick={() => {
+                  if (item.href === path) handleClose();
+                }}
+                key={`menu-link-${index}`}
+                variants={childAnimation}
+              >
+                <Link href={item.href} className={styles.link_hover}>
+                  {item.name}
+                </Link>
+              </motion.li>
+            ) : null
+          )}
+
           <motion.li variants={childAnimation}>
             <button
               className={styles.link_hover}
@@ -99,12 +116,21 @@ const SideMenu = ({ handleClose, handleSearch, handleCart }) => {
       </div>
       <div className={styles.bottom}>
         <ul>
-          <motion.li variants={childAnimation}>
-            <Link href={`/contact`}>contact</Link>
-          </motion.li>
-          <motion.li variants={childAnimation}>
-            <Link href={`/shipping`}>SHIPPING & RETURNS</Link>
-          </motion.li>
+          {links.map((item, index) =>
+            item.category === 2 ? (
+              <motion.li
+                onClick={() => {
+                  if (item.href === path) handleClose();
+                }}
+                key={`menu-link-${index}`}
+                variants={childAnimation}
+              >
+                <Link href={item.href} className={styles.link_hover}>
+                  {item.name}
+                </Link>
+              </motion.li>
+            ) : null
+          )}
           <ul className={styles.flex}>
             <motion.li variants={childAnimation}>
               <Link target={"_blank"} href="https://www.facebook.com/">
