@@ -1,12 +1,10 @@
 .container {
-  display: flex;
-  div {
-    flex: 1;
-  }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 @media only screen and (max-width: 900px) {
   .container {
     gap: 1.5rem;
-    flex-direction: column-reverse;
+    grid-template-columns: 1fr;
   }
 }
