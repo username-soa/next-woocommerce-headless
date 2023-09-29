@@ -8,9 +8,10 @@ import { motion, useSpring, useScroll, useTransform } from "framer-motion";
 const Hero = () => {
   const { scrollY } = useScroll();
 
-  const x = useTransform(scrollY, [0, 100], [0, -100]);
-  const scale = useTransform(scrollY, [0, 100], [1, 1.15]);
-  const springX = useSpring(x);
+  const y = useTransform(scrollY, [0, 200], [0, -80]);
+  const scale = useTransform(scrollY, [0, 200], [1, 1.15]);
+  const opacity = useTransform(scrollY, [0, 200], [0.9, 0.3]);
+  const springY = useSpring(y);
   const springScale = useSpring(scale);
   return (
     <div className={styles.container}>
@@ -170,12 +171,16 @@ const Hero = () => {
 
       <motion.div
         style={{
+          y: springY,
+          opacity: opacity,
           scale: springScale,
         }}
         className={cx(styles.underlay, styles.underlay_1)}
       />
       <motion.div
         style={{
+          y: springY,
+          opacity: opacity,
           scale: springScale,
         }}
         className={cx(styles.underlay, styles.underlay_2)}
