@@ -10,7 +10,7 @@ const Hero = () => {
 
   const y = useTransform(scrollY, [0, 200], [0, -80]);
   const scale = useTransform(scrollY, [0, 200], [1, 1.15]);
-  const opacity = useTransform(scrollY, [0, 200], [0.9, 0.3]);
+  const opacity = useTransform(scrollY, [0, 200], [0.8, 0.3]);
   const springY = useSpring(y);
   const springScale = useSpring(scale);
   return (
@@ -156,15 +156,19 @@ const Hero = () => {
         </div>
       </div>
       <div className={styles.overlay}>
-        <h1>Elegance in Every Detail</h1>
+        <h1>
+          <span className={styles.highlighted_span}>Elegance</span>
+          <span className={styles.centred_span}>in Every</span>
+          <span className={styles.highlighted_span}>Detail.</span>
+        </h1>
         <p>
-          Description: “Welcome to our exclusive collection of exquisite vases.
-          Each piece is a testament to the artistry and craftsmanship that go
-          into creating these unique items. Our vases are more than just
-          containers for flowers - they are standalone works of art. Made from
-          the finest materials and designed with meticulous attention to detail,
-          our vases are the epitome of luxury and sophistication. Elevate your
-          space with our stunning vases, where elegance resides in every detail.
+          Welcome to our exclusive collection of exquisite vases. Each piece is
+          a testament to the artistry and craftsmanship that go into creating
+          these unique items. Our vases are more than just containers for
+          flowers - they are standalone works of art. Made from the finest
+          materials and designed with meticulous attention to detail, our vases
+          are the epitome of luxury and sophistication. Elevate your space with
+          our stunning vases, where elegance resides in every detail.
         </p>
         <Button href={"/collections"} title="Explore Our Collections" />
       </div>

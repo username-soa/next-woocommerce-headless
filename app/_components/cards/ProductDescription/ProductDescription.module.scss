@@ -47,10 +47,3 @@
     grid-row: 1/2;
   }
 }
-@media only screen and (max-width: 600px) {
-  .container {
-    .buttons_wrp {
-      flex-direction: column;
-    }
-  }
-}
