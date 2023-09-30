@@ -1,9 +1,12 @@
 import "./globals.scss";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import { Footer, Header } from "@/components/ui";
 import SearchHistoryProvider from "@/contexts/SearchHistoryContext";
 
-const inter = Inter({ subsets: ["latin"] });
+const myFont = localFont({
+  src: "../fonts/Maiandra-GD-Regular.ttf",
+  display: "swap",
+});
 
 export const metadata = {
   title: "",
@@ -21,7 +24,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={myFont.className}>
       <body>
         <div className="wrapper">
           <SearchHistoryProvider>
