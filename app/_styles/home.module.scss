@@ -1,12 +1,11 @@
 .hero {
-  display: grid;
+  // gap: 2rem;
   display: flex;
   margin: 0 auto;
-  overflow: hidden;
-  position: relative;
-  border-radius: 1rem;
+  flex-direction: column;
   width: clamp(90%, 70%, 1440px);
 }
+
 @media only screen and (max-width: 800px) {
   .hero {
     box-shadow: none;

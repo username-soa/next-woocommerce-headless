@@ -34,6 +34,9 @@ const Button = ({
           },
           {
             [styles.secondary]: intent === "secondary",
+          },
+          {
+            [styles.transparent]: intent === "transparent",
           }
         )}
       >
@@ -71,6 +74,9 @@ const Button = ({
         },
         {
           [styles.secondary]: intent === "secondary",
+        },
+        {
+          [styles.transparent]: intent === "transparent",
         }
       )}
     >

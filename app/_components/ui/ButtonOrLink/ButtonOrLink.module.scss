@@ -51,6 +51,10 @@
     color: #313131;
     background-color: #f1f3f5;
   }
+  &.transparent {
+    background-color: transparent;
+    color: #000;
+  }
   svg {
     width: 15px !important;
     height: 15px !important;
@@ -94,5 +98,9 @@
   &.secondary {
     color: #313131;
     background-color: #f1f3f5;
+  }
+  &.transparent {
+    background-color: transparent;
+    color: #000;
   }
 }
