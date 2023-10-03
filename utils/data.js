@@ -1,3 +1,23 @@
+import image1 from "../public/images/collections/collection1.PNG";
+import image2 from "../public/images/collections/collection2.PNG";
+import image3 from "../public/images/collections/collection3.PNG";
+import image4 from "../public/images/collections/collection4.PNG";
+import image5 from "../public/images/collections/collection5.PNG";
+import image6 from "../public/images/collections/collection6.PNG";
+import image7 from "../public/images/collections/collection1.PNG";
+import image8 from "../public/images/collections/collection2.PNG";
+import image9 from "../public/images/collections/collection3.PNG";
+import image10 from "../public/images/collections/collection4.PNG";
+import image11 from "../public/images/collections/collection5.PNG";
+import image12 from "../public/images/collections/collection6.PNG";
+import image13 from "../public/images/collections/collection1.PNG";
+import image14 from "../public/images/collections/collection2.PNG";
+import image15 from "../public/images/collections/collection3.PNG";
+import image16 from "../public/images/collections/collection4.PNG";
+import image17 from "../public/images/collections/collection5.PNG";
+import image18 from "../public/images/collections/collection6.PNG";
+import image19 from "../public/images/collections/collection5.PNG";
+import image20 from "../public/images/collections/collection6.PNG";
 const collections = [
   {
     title: "Best Selling",
@@ -45,7 +65,108 @@ const collections = [
     image: "/images/collections/collection3.PNG",
   },
 ];
-
+const heroImages = [
+  {
+    title: "Best Selling",
+    slug: "best-selling",
+    image: image1,
+  },
+  {
+    title: "Collection name 2",
+    slug: "collection-name-2",
+    image: image2,
+  },
+  {
+    title: "Collection name 3",
+    slug: "collection-name-3",
+    image: image3,
+  },
+  {
+    title: "Collection name 4",
+    slug: "collection-name-4",
+    image: image4,
+  },
+  {
+    title: "Collection name 5",
+    slug: "collection-name-5",
+    image: image5,
+  },
+  {
+    title: "Collection name 6",
+    slug: "collection-name-6",
+    image: image6,
+  },
+  {
+    title: "Collection name 7",
+    slug: "collection-name-7",
+    image: image7,
+  },
+  {
+    title: "Collection name 8",
+    slug: "collection-name-8",
+    image: image8,
+  },
+  {
+    title: "Collection name 9",
+    slug: "collection-name-9",
+    image: image9,
+  },
+  {
+    title: "Best Selling",
+    slug: "best-selling",
+    image: image10,
+  },
+  {
+    title: "Collection name 2",
+    slug: "collection-name-2",
+    image: image11,
+  },
+  {
+    title: "Collection name 3",
+    slug: "collection-name-3",
+    image: image12,
+  },
+  {
+    title: "Collection name 4",
+    slug: "collection-name-4",
+    image: image13,
+  },
+  {
+    title: "Collection name 5",
+    slug: "collection-name-5",
+    image: image14,
+  },
+  {
+    title: "Collection name 6",
+    slug: "collection-name-6",
+    image: image15,
+  },
+  {
+    title: "Collection name 7",
+    slug: "collection-name-7",
+    image: image16,
+  },
+  {
+    title: "Collection name 8",
+    slug: "collection-name-8",
+    image: image17,
+  },
+  {
+    title: "Collection name 9",
+    slug: "collection-name-9",
+    image: image18,
+  },
+  {
+    title: "Collection name 8",
+    slug: "collection-name-8",
+    image: image19,
+  },
+  {
+    title: "Collection name 9",
+    slug: "collection-name-9",
+    image: image20,
+  },
+];
 const products = [
   {
     price: 200,
@@ -249,4 +370,4 @@ const products = [
   },
 ];
 
-export { collections, products };
+export { collections, products, heroImages };

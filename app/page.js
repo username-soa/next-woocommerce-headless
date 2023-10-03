@@ -1,13 +1,13 @@
 import { products } from "@/utils/data";
-import { Hero } from "@/components/cards";
 import styles from "@/styles/home.module.scss";
-import { BeastSellingSection } from "@/components/sections";
+import { BeastSellingSection, Hero } from "@/components/sections";
 
 export default function Home() {
   return (
-    <div className={styles.hero}>
+    <div className={styles.container}>
       <Hero />
       <BeastSellingSection data={products} />
+      <div className={styles.featured_collections}></div>
     </div>
   );
 }

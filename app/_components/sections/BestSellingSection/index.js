@@ -11,11 +11,7 @@ const BeastSellingSection = ({ data }) => {
     <div className={styles.container}>
       <div className={styles.heading}>
         <h1>Best Selling</h1>
-        <Button
-          title={"View all"}
-          intent="transparent"
-          href={"/best-selling"}
-        />
+        <Button title={"View all"} intent="secondary" href={"/best-selling"} />
       </div>
       <div ref={sliderRef} className={styles.flex_row}>
         <motion.div
