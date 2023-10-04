@@ -3,10 +3,10 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import styles from "./Contact.module.scss";
 
-export const metadata = {
-  title: "Contact",
-  description: "Contact page.",
-};
+// export const metadata = {
+//   title: "Contact",
+//   description: "Contact page.",
+// };
 
 const Contact = () => {
   const data = {
