@@ -57,15 +57,14 @@ const Hero = () => {
           Detail.
         </motion.h1>
         <motion.p variants={childAnimation}>
-          Welcome to our exclusive collection of exquisite vases. Each piece is
-          a testament to the artistry and craftsmanship that go into creating
-          these unique items. Our vases are more than just containers for
-          flowers - they are standalone works of art. Made from the finest
-          materials and designed with meticulous attention to detail, our vases
-          are the epitome of luxury and sophistication. Elevate your space with
-          our stunning vases, where elegance resides in every detail.
+          Discover the allure of our exclusive VASE collection. Each piece, a
+          masterstroke of artistry and craftsmanship, transcends its role as a
+          mere flower holder to become a standalone masterpiece. Crafted from
+          premium materials with an eye for detail, our vases embody luxury and
+          sophistication. Add a touch of elegance to your space with our
+          stunning vases - where every detail speaks of elegance.
         </motion.p>
-        <Button href={"/collections"} title="Explore Our Collections" />
+        <Button href={"/collections"} title="Shop now" />
       </motion.div>
       <motion.div
         exit="exit"

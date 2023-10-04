@@ -1,0 +1,35 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  // grid-template-columns: 1fr 1fr;
+  .content {
+    flex: 1;
+    padding: 1rem 0;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .image {
+    flex: 1;
+    position: relative;
+  }
+  a {
+    margin: 0 auto;
+  }
+  &.reversed {
+    flex-direction: row-reverse;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container {
+    min-height: 90vh;
+    flex-direction: column;
+    &.reversed {
+      flex-direction: column;
+    }
+  }
+}

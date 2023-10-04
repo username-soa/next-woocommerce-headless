@@ -1,4 +1,5 @@
 import Hero from "./Hero";
+import FeaturedCollection from "./FeaturedCollection";
 import BeastSellingSection from "./BestSellingSection";
 
-export { Hero, BeastSellingSection };
+export { Hero, FeaturedCollection, BeastSellingSection };

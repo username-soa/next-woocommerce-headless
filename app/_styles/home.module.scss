@@ -4,11 +4,6 @@
   flex-direction: column;
   width: clamp(90%, 70%, 1440px);
 }
-.featured_collections {
-  padding: 1rem;
-  background-color: red;
-  height: 100vh;
-}
 
 @media only screen and (max-width: 768px) {
   .container {

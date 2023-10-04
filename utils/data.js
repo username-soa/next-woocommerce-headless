@@ -25,8 +25,8 @@ const collections = [
     image: "/images/collections/collection1.PNG",
   },
   {
-    title: "Collection name 2",
-    slug: "collection-name-2",
+    title: "New Arrivals",
+    slug: "new-arrivals",
     image: "/images/collections/collection2.PNG",
   },
   {

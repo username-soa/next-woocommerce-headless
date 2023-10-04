@@ -1,6 +1,7 @@
 .container {
   gap: 1rem;
   width: 100%;
+  padding: 1rem 0;
   display: grid;
   overflow: hidden;
   border-radius: 1rem;
@@ -18,7 +19,8 @@
     line-height: 130%;
     text-transform: lowercase;
     text-transform: capitalize;
-    font-size: clamp(32px, 16.5070422535px + 3.0985915493vw, 76px);
+    color: rgb(27, 27, 27);
+    font-size: clamp(32px, 16.5070422535px + 3.0985915493vw, 60px);
     .highlighted_span {
       background-image: linear-gradient(
         to top,
