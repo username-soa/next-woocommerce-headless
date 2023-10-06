@@ -1,0 +1,82 @@
+.container {
+  min-height: calc(100vh - 120px);
+  background-color: hsla(0, 0%, 100%, 0.8);
+  backdrop-filter: blur(24px);
+  border-radius: calc(0.5rem + 16px);
+  position: sticky;
+  overflow: hidden;
+  top: 80px;
+  gap: 1.5rem;
+  display: flex;
+  margin: 2rem 0;
+  padding: 16px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 0px 0px 1px,
+    rgba(0, 0, 0, 0.05) 0px 2px 4px, rgba(0, 0, 0, 0.05) 0px 12px 24px;
+  .content {
+    flex: 1;
+    gap: 1.5rem;
+    display: flex;
+    padding: 1rem 0;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .image {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    border-radius: 0.5rem;
+  }
+  .zoom_image {
+    flex: 1;
+  }
+  a {
+    margin: 0 auto;
+  }
+  &.reversed {
+    flex-direction: row-reverse;
+  }
+}
+@for $i from 1 through 4 {
+  .container:nth-child(#{$i}n) {
+    top: $i * 16px + 74px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container {
+    min-height: unset;
+    padding: 0;
+    gap: 0.75rem;
+    box-shadow: none;
+    flex-direction: column;
+    &.reversed {
+      flex-direction: column;
+    }
+    .content {
+      gap: 0.75rem;
+      flex: none;
+      padding: 0;
+      padding-top: 0.5rem;
+      p {
+        line-height: 1.5;
+      }
+    }
+    .image {
+      flex: none;
+      aspect-ratio: 3 /4;
+    }
+  }
+  @for $i from 1 through 4 {
+    .container:nth-child(#{$i}n) {
+      top: $i + 70px;
+    }
+  }
+}
+@media only screen and (max-width: 400px) {
+  .container {
+    .image {
+      aspect-ratio: 1 /1;
+    }
+  }
+}

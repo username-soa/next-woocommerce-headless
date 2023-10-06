@@ -1,16 +1,10 @@
 "use client";
 import { cx } from "@/utils/functions";
-import styles from "./FeaturedCollection.module.scss";
+import styles from "./StickySection.module.scss";
 import { Button, BlurredImage } from "@/components/ui";
 import { motion, useSpring, useScroll, useTransform } from "framer-motion";
 
-const FeaturedCollection = ({
-  src,
-  href,
-  title,
-  description,
-  reversed = false,
-}) => {
+const StickySection = ({ src, href, title, description, reversed = false }) => {
   const { scrollYProgress } = useScroll();
   const scale = useTransform(scrollYProgress, [0, 1], [1.01, 1.5]);
   const springScale = useSpring(scale);
@@ -19,7 +13,7 @@ const FeaturedCollection = ({
       <div className={styles.content}>
         <h2>{title}</h2>
         <p>{description}</p>
-        <Button href={href} title="Shop now" intent="secondary" />
+        <Button href={href} title="Shop now" />
       </div>
       <div className={styles.image}>
         <motion.div
@@ -35,4 +29,4 @@ const FeaturedCollection = ({
   );
 };
 
-export default FeaturedCollection;
+export default StickySection;
