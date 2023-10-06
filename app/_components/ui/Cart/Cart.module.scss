@@ -8,9 +8,8 @@
   backdrop-filter: blur(5px);
 }
 .container {
-  gap: 1.25rem;
   display: flex;
-  padding: 2.5rem;
+  padding: 1.5rem 2rem;
   max-width: 35rem;
   flex-direction: column;
   background-color: white;
@@ -18,6 +17,7 @@
   border-left: 0.1rem solid #e5e5e5;
 }
 .title {
+  padding-bottom: 1.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -73,6 +73,17 @@
   padding-bottom: 0.25rem;
   justify-content: space-between;
   border-bottom: 1px solid rgb(229 229 229/1);
+  position: relative;
+
+  &:before {
+    content: "";
+    left: 0;
+    right: 0;
+    position: absolute;
+    bottom: 100%;
+    height: 40px;
+    background: linear-gradient(to top, hsla(0, 0%, 100%, 0.8), transparent);
+  }
   p {
     color: #797979;
     text-transform: capitalize;
@@ -105,11 +116,6 @@
   font-size: 1.5rem;
 }
 
-// testing stuff
-.testing_div {
-  padding: 2rem;
-  background-color: red;
-}
 @media only screen and (max-width: 768px) {
   .container {
     width: 100%;
