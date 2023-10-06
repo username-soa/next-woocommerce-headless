@@ -56,8 +56,8 @@ const Header = () => {
         >
           <ul className={styles.header_ul}>
             <li>
-              <Link href={"/best-selling"} className={styles.link_hover}>
-                Best Selling
+              <Link href={"/collections"} className={styles.link_hover}>
+                Collections
               </Link>
             </li>
             <li>
