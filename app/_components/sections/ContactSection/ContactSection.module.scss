@@ -9,7 +9,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
   > div {
     width: 100%;
   }
@@ -105,7 +105,7 @@
     height: fit-content;
   }
   .links_wrp {
-    padding-bottom: 0.5rem;
+    padding-bottom: 1rem;
     &:first-child {
       border-top: 1px solid #e5e5e5;
     }

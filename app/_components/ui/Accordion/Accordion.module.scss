@@ -1,0 +1,57 @@
+.accordion_btn {
+  border-top: 1px solid rgba(10, 4, 0, 0.15);
+  align-items: center;
+  color: #0a0400;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+  position: relative;
+  text-align: left;
+  width: 100%;
+  font-size: 2rem;
+  letter-spacing: -0.01em;
+  line-height: 1.1739;
+  background-color: transparent;
+  &::first-letter {
+    text-transform: capitalize;
+  }
+}
+.rich_text {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.75rem;
+  padding-bottom: 1.5rem;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  a {
+    cursor: pointer;
+    width: fit-content;
+    display: inline-flex;
+    border-bottom: 1px solid #000;
+  }
+}
+.accordion_svg {
+  height: 1rem;
+  width: 1.3rem;
+  transition: transform 0.4s cubic-bezier(0, 0, 0, 1);
+  &.rotate_svg {
+    transform: rotate(-180deg);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .accordion_btn {
+    font-size: 1.7rem;
+    padding: 1rem 0;
+  }
+  .rich_text {
+    row-gap: 0.5rem;
+    padding-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .accordion_svg {
+    width: 0.8rem;
+    height: 0.5rem;
+  }
+}

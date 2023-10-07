@@ -1,8 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import { cx } from "@/utils/functions";
 import styles from "./Footer.module.scss";
-import Image from "next/image";
-import BlurredImage from "../BlurredImage/BlurredImage";
 
 const Footer = () => {
   return (

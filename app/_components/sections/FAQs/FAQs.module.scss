@@ -1,16 +1,31 @@
 .h1 {
   font-weight: 300;
   text-align: center;
-  padding-bottom: 6rem;
+  padding-bottom: 3rem;
   text-transform: capitalize;
-
   font-size: clamp(26px, 15.4366197183px + 2.1126760563vw, 56px);
 }
-.content {
-  padding: 6rem 0;
-  border-top: 0.1rem solid rgba(10, 4, 0, 0.15);
-  border-bottom: 0.1rem solid rgba(10, 4, 0, 0.15);
+.p {
+  text-align: center;
+  padding-bottom: 6rem;
+  a {
+    all: unset;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    border-bottom: 1px solid #000;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
 }
+.content {
+  padding: 0;
+  //   border-top: 0.1rem solid rgba(10, 4, 0, 0.15);
+  border-bottom: 0.1rem solid rgba(10, 4, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+}
+
 .back_to_top {
   display: flex;
   color: #0a0400;
@@ -28,6 +43,9 @@
 }
 @media only screen and (max-width: 768px) {
   .h1 {
+    padding-bottom: 1.5rem;
+  }
+  .p {
     padding-bottom: 3rem;
   }
   .content {

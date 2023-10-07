@@ -5,6 +5,7 @@ import Header from "./Header";
 import Portal from "./Portal";
 import Spinner from "./Spinner";
 import Container from "./Container";
+import Accordion from "./Accordion";
 import PageHeader from "./PageHeader";
 import BrandHeader from "./BrandHeader";
 import SideMenu from "./SideMenu/SideMenu";
@@ -21,6 +22,7 @@ export {
   Spinner,
   SideMenu,
   Container,
+  Accordion,
   PageHeader,
   BrandHeader,
   BlurredImage,
