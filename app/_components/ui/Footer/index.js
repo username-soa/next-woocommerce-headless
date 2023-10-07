@@ -16,7 +16,9 @@ const Footer = () => {
               <div className={styles.logo}>
                 <Link href="/">VaseStylé</Link>
               </div>
-              <p>&quot;Elegance In Every Detail.&quot;</p>
+              <p className={styles.slogan}>
+                &quot;Elegance In Every Detail.&quot;
+              </p>
             </div>
             <div className={styles.links_container}>
               <div className={styles.footer_column}>

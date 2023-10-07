@@ -3,7 +3,6 @@
   color: #fff;
   margin: 0 auto;
   position: sticky;
-
   font-size: 0.8rem;
   margin-bottom: 2rem;
   width: clamp(90%, 70%, 1440px);
@@ -17,10 +16,10 @@
       opacity: 0.6;
     }
   }
-  p {
-    margin-top: 0.25rem;
-    font-size: 0.85rem;
-  }
+}
+
+.slogan {
+  color: #e6ac44;
 }
 .content {
   z-index: 2;
@@ -30,7 +29,7 @@
   overflow: hidden;
 }
 .grain {
-  gap: 1rem;
+  gap: 2rem;
   display: flex;
   position: relative;
   padding: 2rem 1.5rem;
@@ -80,7 +79,7 @@
 .bottom {
   display: flex;
   align-items: center;
-  padding-top: 0.75rem;
+  padding-top: 2rem;
   justify-content: space-around;
   border-top: 1px solid hsla(21, 30%, 91%, 0.15);
 }
@@ -141,7 +140,7 @@
   }
   .footer_column_grow {
     align-items: center;
-    padding-bottom: 0.5rem;
+    padding-bottom: 1rem;
     border-bottom: 1px solid hsla(21, 30%, 91%, 0.15);
   }
   .links_container {
@@ -151,9 +150,11 @@
   }
   .bottom {
     gap: 0.5rem;
+    padding-top: 1.5rem;
     flex-direction: column;
   }
   .grain {
+    gap: 1.5rem;
     padding: 1.5rem 1rem;
   }
   .row_ul {
@@ -169,6 +170,7 @@
   .container {
     width: 100%;
     padding: 0 1rem;
+    margin-bottom: 1rem;
   }
   .background_shape {
     width: 800vw;
