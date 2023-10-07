@@ -1,18 +1,19 @@
 .accordion_btn {
-  border-top: 1px solid rgba(10, 4, 0, 0.15);
-  align-items: center;
-  color: #0a0400;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  padding: 1.5rem 0;
-  position: relative;
-  text-align: left;
+  gap: 1rem;
   width: 100%;
+  display: flex;
+  cursor: pointer;
+  padding: 2rem 0;
   font-size: 2rem;
-  letter-spacing: -0.01em;
+  color: #0a0400;
+  text-align: left;
+  position: relative;
+  align-items: center;
   line-height: 1.1739;
+  letter-spacing: -0.01em;
   background-color: transparent;
+  justify-content: space-between;
+  border-top: 1px solid rgba(10, 4, 0, 0.15);
   &::first-letter {
     text-transform: capitalize;
   }
@@ -41,7 +42,7 @@
 }
 @media only screen and (max-width: 768px) {
   .accordion_btn {
-    font-size: 1.7rem;
+    font-size: 1.35rem;
     padding: 1rem 0;
   }
   .rich_text {

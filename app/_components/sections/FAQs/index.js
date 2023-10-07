@@ -69,11 +69,7 @@ const FAQs = ({ content }) => {
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       >
         back to top
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 8 5"
-          class="back-to-top__svg"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 5">
           <path d="M4 5 0 0l4 2.5L8 0 4 5Z"></path>
         </svg>
       </button>

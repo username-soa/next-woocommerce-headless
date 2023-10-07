@@ -16,7 +16,7 @@ const Accordion = ({ i, expand, setExpand, question, answer }) => {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 8 5"
-          class={cx(styles.accordion_svg, { [styles.rotate_svg]: isOpen })}
+          className={cx(styles.accordion_svg, { [styles.rotate_svg]: isOpen })}
         >
           <path d="M4 5 0 0l4 2.5L8 0 4 5Z"></path>
         </svg>
