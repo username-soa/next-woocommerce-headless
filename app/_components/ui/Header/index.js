@@ -11,6 +11,7 @@ import {
   AnimatePresence,
 } from "framer-motion";
 import { Cart, Portal, Search, SideMenu } from "@/components/ui";
+import { cx } from "@/utils/functions";
 
 const Header = () => {
   const path = usePathname();
@@ -87,7 +88,7 @@ const Header = () => {
             </li>
             <li>
               <button
-                className={styles.link_hover}
+                className={styles.bag_btn}
                 type="button"
                 title="cart"
                 onClick={() =>
@@ -99,7 +100,11 @@ const Header = () => {
                   })
                 }
               >
-                bag [0]
+                <div className={cx(styles.bag_btn_hover)}>bag</div>
+
+                <div className={styles.bag_indicator}>
+                  <div className={styles.bag_indicator_content}>0</div>
+                </div>
               </button>
             </li>
           </ul>
