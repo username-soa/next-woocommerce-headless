@@ -23,4 +23,24 @@ const createUrl = (pathname, params) => {
   return `${pathname}${queryString}`;
 };
 
-export { cx, createUrl };
+function getMostVisibleDiv(items) {
+  var windowHeight = window.innerHeight;
+  var maxVisibility = 0;
+  var mostVisibleDiv = null;
+
+  items.forEach(function (div, index) {
+    var rect = div.getBoundingClientRect();
+    var visibility =
+      Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
+
+    if (visibility > maxVisibility) {
+      maxVisibility = visibility;
+      mostVisibleDiv = div;
+      mostVisibleDiv = index;
+    }
+  });
+
+  return mostVisibleDiv;
+}
+
+export { cx, createUrl, getMostVisibleDiv };

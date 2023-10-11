@@ -44,6 +44,10 @@
     padding: 0;
     position: initial;
     height: fit-content;
-    grid-row: 1/2;
+    .top {
+      position: sticky;
+      bottom: 0;
+      z-index: 999;
+    }
   }
 }

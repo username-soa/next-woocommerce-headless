@@ -7,6 +7,7 @@ import Spinner from "./Spinner";
 import Container from "./Container";
 import Accordion from "./Accordion";
 import PageHeader from "./PageHeader";
+import ScrollLink from "./ScrollLink";
 import BrandHeader from "./BrandHeader";
 import SideMenu from "./SideMenu/SideMenu";
 import Button from "./ButtonOrLink/ButtonOrLink";
@@ -24,6 +25,7 @@ export {
   Container,
   Accordion,
   PageHeader,
+  ScrollLink,
   BrandHeader,
   BlurredImage,
 };
