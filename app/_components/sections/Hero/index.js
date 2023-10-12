@@ -57,12 +57,10 @@ const Hero = () => {
           Detail.
         </motion.h1>
         <motion.p variants={childAnimation}>
-          Discover the allure of our exclusive VASE collection. Each piece, a
-          masterstroke of artistry and craftsmanship, transcends its role as a
-          mere flower holder to become a standalone masterpiece. Crafted from
-          premium materials with an eye for detail, our vases embody luxury and
-          sophistication. Add a touch of elegance to your space with our
-          stunning vases - where every detail speaks of elegance.
+          DDiscover our unique VASE collection, where artistry meets
+          craftsmanship in each standalone masterpiece. Crafted from premium
+          materials, our vases embody luxury and sophistication. Elevate your
+          space with our exquisite vases, a testament to modern elegance.
         </motion.p>
         <Button href={"/collections"} title="Shop now" />
       </motion.div>

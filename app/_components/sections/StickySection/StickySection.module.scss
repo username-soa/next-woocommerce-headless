@@ -1,11 +1,11 @@
 .container {
-  min-height: calc(100vh - 120px);
+  min-height: calc(60vh);
   background-color: hsla(0, 0%, 100%, 0.8);
   backdrop-filter: blur(24px);
   border-radius: calc(0.5rem + 16px);
   position: sticky;
   overflow: hidden;
-  top: 80px;
+  top: 150px;
   gap: 1.5rem;
   display: flex;
   margin: 2rem 0;
@@ -50,6 +50,8 @@
     gap: 0.75rem;
     box-shadow: none;
     flex-direction: column;
+    position: unset;
+    border-radius: 0;
     &.reversed {
       flex-direction: column;
     }

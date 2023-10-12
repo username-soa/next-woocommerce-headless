@@ -2,7 +2,14 @@ import Link from "next/link";
 import styles from "./ProductCard.module.scss";
 import { BlurredImage } from "@/components/ui";
 
-const ProductCard = ({ alt, title, price, image, slug }) => {
+const ProductCard = ({
+  alt,
+  title,
+  price,
+  image,
+  slug,
+  currencyCode = "USD",
+}) => {
   return (
     <div className={styles.container}>
       <div className={styles.image_wrp}>
@@ -16,7 +23,13 @@ const ProductCard = ({ alt, title, price, image, slug }) => {
 
       <div className={styles.product_info}>
         <Link href={`/product/${slug}`}>{title}</Link>
-        <span>{price}</span>
+        <span>
+          {`${new Intl.NumberFormat(undefined, {
+            style: "currency",
+            currency: currencyCode,
+            currencyDisplay: "narrowSymbol",
+          }).format(parseFloat(price))}`}
+        </span>
       </div>
     </div>
   );

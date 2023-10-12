@@ -1,12 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui";
-import styles from "./ProductDescription.module.scss";
+import styles from "./AddToCart.module.scss";
 
-const ProductDescription = ({
-  title,
+const AddToCart = ({
   price,
-  description,
+  title,
   currencyCode = "USD",
   availableForSale = true,
 }) => {
@@ -47,7 +46,7 @@ const ProductDescription = ({
       variants={parentAnimation}
       className={styles.container}
     >
-      <motion.div className={styles.top}>
+      <div className={styles.content}>
         <motion.h1 variants={childAnimation}>{title}</motion.h1>
         <motion.div variants={childAnimation} className={styles.pricing_wrp}>
           <p suppressHydrationWarning={true}>
@@ -59,18 +58,10 @@ const ProductDescription = ({
             <span> {`${currencyCode}`}</span>
           </p>
         </motion.div>
-      </motion.div>
-
-      <motion.div
-        variants={childAnimation}
-        className={styles.product_description}
-        dangerouslySetInnerHTML={{ __html: description }}
-      />
-      <motion.div variants={childAnimation} className={styles.buttons_wrp}>
-        <Button title={availableForSale ? "Add To Bag" : "Out Of Stock"} />
-      </motion.div>
+      </div>
+      <Button title={availableForSale ? "Add To Bag" : "Out Of Stock"} />
     </motion.div>
   );
 };
 
-export default ProductDescription;
+export default AddToCart;

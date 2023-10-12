@@ -16,6 +16,9 @@
 .test_div {
   min-height: 100vh;
   background-color: green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 // for futur use
 // .heading-1 {

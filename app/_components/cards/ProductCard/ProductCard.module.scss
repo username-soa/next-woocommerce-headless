@@ -1,5 +1,5 @@
 .container {
-  gap: 0.25rem;
+  gap: 0.5rem;
   display: flex;
   flex-direction: column;
 }
@@ -10,12 +10,18 @@
   a {
     display: inline-block;
     width: 100%;
-    font-size: 0.8rem;
-    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 1.25;
+    text-transform: capitalize;
     font-family: inherit;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+  }
+  span {
+    font-size: 13px;
+    color: #757575;
+    line-height: 1.25;
   }
 }
 .image_wrp {
@@ -31,4 +37,16 @@
 }
 .product_image {
   transition: transform 0.3s ease;
+}
+@media only screen and (max-width: 768px) {
+  .product_info {
+    a {
+      font-size: 14px;
+    }
+  }
+}
+@media only screen and (max-width: 500px) {
+  .product_info {
+    grid-template-columns: 1fr;
+  }
 }

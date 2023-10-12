@@ -1,22 +1,12 @@
 "use client";
-import { products, collections } from "@/utils/data";
+import { collections } from "@/utils/data";
 import styles from "@/styles/home.module.scss";
-import {
-  BeastSellingSection,
-  Hero,
-  FeaturedCollection,
-  StickySection,
-} from "@/components/sections";
-import { BlurredImage, Button } from "./_components/ui";
-import { cx } from "@/utils/functions";
-import { useEffect, useState } from "react";
+import { Hero, StickySection } from "@/components/sections";
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Hero />
-      {/* <BeastSellingSection data={products} /> */}
-
       <div className={styles.stack_container}>
         <StickySection
           title="Best Selling"
@@ -38,7 +28,9 @@ export default function Home() {
           src={collections[3].image}
         />
       </div>
-      <div className={styles.test_div}></div>
+      <div className={styles.test_div}>
+        newsletter or some other section, to be determined
+      </div>
     </div>
   );
 }

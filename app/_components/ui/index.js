@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import Portal from "./Portal";
 import Spinner from "./Spinner";
+import AddToCart from "./AddToCart";
 import Container from "./Container";
 import Accordion from "./Accordion";
 import PageHeader from "./PageHeader";
@@ -23,6 +24,7 @@ export {
   Spinner,
   SideMenu,
   Container,
+  AddToCart,
   Accordion,
   PageHeader,
   ScrollLink,

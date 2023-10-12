@@ -2,6 +2,7 @@
   gap: 0.11rem;
   display: flex;
   flex-direction: column;
+  position: relative;
   &:hover {
     .image_indicator_container {
       .image_indicator_grid {
@@ -68,6 +69,20 @@
     overflow: scroll hidden;
     max-height: 80vh;
     scroll-snap-type: x mandatory;
+    &::-webkit-scrollbar {
+      border-radius: 1.5px;
+      background-color: rgba(0, 0, 0, 0.1);
+      width: 3px;
+      height: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.9);
+      border-radius: 1.5px;
+    }
+  }
+  .image_wrp {
+    pointer-events: none;
+    scroll-snap-align: center;
   }
   .image_indicator_container {
     display: none;

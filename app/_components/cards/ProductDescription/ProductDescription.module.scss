@@ -1,33 +1,32 @@
 .container {
   top: 100px;
   height: 100vh;
-  padding: 1rem;
+  padding: 1rem 3rem;
   position: sticky;
+  display: flex;
+  flex-direction: column;
+  padding-top: 18vh;
+  margin: 0 auto;
   .top {
     padding-bottom: 1.5rem;
     margin-bottom: 1.5rem;
     border-bottom: 1px solid #e5e7eb;
   }
   h1 {
-    line-height: 1;
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
     text-transform: capitalize;
+    font-size: 20px;
+    line-height: 1.35;
+    padding-bottom: 0.5em;
   }
   .pricing_wrp {
-    padding: 0.5rem;
-    width: fit-content;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    border-radius: 9999px;
-    box-shadow: transparent, 0 0 #0000;
-    background-color: rgb(245 245 245/1);
+    line-height: 1;
+    font-size: 13px;
+    color: #757575;
   }
   .product_description {
-    line-height: 1.25;
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     color: rgb(0 0 0/1);
-    margin-bottom: 1.5rem;
+    line-height: 1.5;
   }
   .buttons_wrp {
     gap: 1rem;
@@ -39,15 +38,15 @@
     }
   }
 }
+
 @media only screen and (max-width: 900px) {
   .container {
     padding: 0;
     position: initial;
     height: fit-content;
-    .top {
-      position: sticky;
-      bottom: 0;
-      z-index: 999;
+    .top,
+    .buttons_wrp {
+      display: none;
     }
   }
 }
