@@ -5,3 +5,28 @@
 // $background_button
 // $background_button
 // $background_button
+$xxs: 1rem;
+$xs: 1.2rem /* 12px */;
+$sm: 1.4rem /* 14px */;
+$base: 1.6rem /* 16px */;
+$md: 1.6rem /* 16px */;
+$lg: 1.8rem /* 18px */;
+$xl: 2rem /* 20px */;
+$_2xl: 2.4rem /* 24px */;
+$_3xl: 3rem /* 30px */;
+$_4xl: 3.6rem /* 36px */;
+$_5xl: 4.8rem /* 48px */;
+$_6xl: 6rem /* 60px */;
+$_7xl: 7.2rem /* 72px */;
+$_8xl: 9.6rem /* 96px */;
+$_9xl: 12.8rem /* 128px */;
+
+$responsive_f1: clamp(42px, -6.5915492958px + 9.7183098592vw, 180px);
+$responsive_f2: clamp(42px, 4.676056338px + 7.4647887324vw, 148px);
+$responsive_f3: clamp(36px, 14.8732394366px + 4.2253521127vw, 96px);
+$responsive_f4: clamp(32px, 16.5070422535px + 3.0985915493vw, 76px);
+$responsive_f5: clamp(26px, 15.4366197183px + 2.1126760563vw, 56px);
+$responsive_f6: clamp(22px, 12.8450704225px + 1.8309859155vw, 48px);
+$responsive_f7: clamp(18px, 15.8873239437px + 0.4225352113vw, 24px);
+$responsive_f8: clamp(18px, 17.2957746479px + 0.1408450704vw, 20px);
+$responsive_f9: clamp(16px, 14.5915492958px + 0.2816901408vw, 20px);

@@ -1,22 +1,12 @@
-.container {
-  background-color: red;
-}
+@import "../variables.scss";
+
 .no_result {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  font-size: $base;
 }
 .bold_term {
   font-weight: 800;
 }
-.grid {
-  gap: 1rem;
-  display: grid;
-  grid-auto-flow: row dense;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-}
 
 @media only screen and (max-width: 768px) {
-  .grid {
-    grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  }
 }

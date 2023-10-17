@@ -1,3 +1,5 @@
+@import "../../../variables.scss";
+
 .container {
   width: 100%;
   padding: 1rem 0;
@@ -15,12 +17,11 @@
   padding-right: 1rem;
 
   h1 {
-    font-size: 32px;
     line-height: 130%;
     text-transform: lowercase;
     text-transform: capitalize;
     color: rgb(27, 27, 27);
-    font-size: clamp(32px, 16.5070422535px + 3.0985915493vw, 60px);
+    font-size: $responsive_f5;
     .highlighted_span {
       background-image: linear-gradient(
         to top,
@@ -37,7 +38,7 @@
   p {
     color: #000;
     opacity: 0.7;
-    font-size: 1rem;
+    font-size: $base;
     font-weight: 500;
     line-height: 150%;
     text-align: justify;
@@ -153,6 +154,9 @@
   .content {
     padding: 0;
     padding-top: 1rem;
+    p {
+      font-size: $sm;
+    }
   }
   .container {
     gap: 1.5rem;

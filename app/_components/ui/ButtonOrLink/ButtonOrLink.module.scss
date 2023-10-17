@@ -1,6 +1,8 @@
+@import "../../../variables.scss";
+
 .container {
   line-height: 1.5;
-  font-size: 1rem;
+  font-size: $sm;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,7 +68,7 @@
 .link_btn {
   line-height: 1.5;
   color: #fff;
-  font-size: 1rem;
+  font-size: $sm;
   font-weight: 500;
   // padding: 0.4rem 1.1rem;
   padding: 10px 18px;
@@ -109,6 +111,6 @@
 @media only screen and (max-width: 768px) {
   .link_btn,
   .container {
-    font-size: 0.9rem;
+    font-size: $xs;
   }
 }

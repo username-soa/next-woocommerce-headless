@@ -1,12 +1,13 @@
 import styles from "./SimilarProducts.module.scss";
 import { ProductCard } from "@/components/cards";
+import Grid from "../Grid";
 
 const SimilarProducts = ({ products }) => {
   if (products.length === 0) return;
   return (
     <div className={styles.container}>
       <h1>complete the look</h1>
-      <div className={styles.grid}>
+      <Grid>
         {products.slice(0, 6).map((item, index) => {
           return (
             <ProductCard
@@ -18,7 +19,7 @@ const SimilarProducts = ({ products }) => {
             />
           );
         })}
-      </div>
+      </Grid>
     </div>
   );
 };

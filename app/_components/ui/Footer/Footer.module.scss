@@ -1,14 +1,15 @@
+@import "../../../variables.scss";
+
 .container {
   bottom: 0;
   color: #fff;
   margin: 0 auto;
   position: sticky;
-  font-size: 0.8rem;
   margin-bottom: 2rem;
   width: clamp(90%, 70%, 1440px);
   a {
     width: fit-content;
-    font-size: 1rem;
+    font-size: $base;
     line-height: 1.5;
     transition: opacity 0.3s ease;
     text-transform: capitalize;
@@ -19,6 +20,7 @@
 }
 
 .slogan {
+  font-size: $sm;
   color: #e6ac44;
 }
 .content {
@@ -49,17 +51,16 @@
   }
 }
 .logo {
-  font-size: 1.15rem;
+  font-size: $lg;
 }
 
 .row_ul {
   gap: 0.75rem;
   display: flex;
   list-style: none;
-  font-size: 0.85rem;
   li {
     a {
-      font-size: 0.85rem;
+      font-size: $sm;
     }
   }
 }
@@ -82,6 +83,9 @@
   padding-top: 2rem;
   justify-content: space-around;
   border-top: 1px solid hsla(21, 30%, 91%, 0.15);
+  p {
+    font-size: $sm;
+  }
 }
 .footer_column {
   min-width: 120px;
@@ -96,7 +100,7 @@
   color: #e6ac44;
   opacity: 0.8;
   font-weight: 400;
-  font-size: 0.8rem;
+  font-size: $sm;
   text-transform: uppercase;
 }
 .background_shape {
@@ -158,10 +162,9 @@
     padding: 1.5rem 1rem;
   }
   .row_ul {
-    font-size: 0.75rem;
     li {
       a {
-        font-size: 0.75rem;
+        font-size: $xs;
       }
     }
   }

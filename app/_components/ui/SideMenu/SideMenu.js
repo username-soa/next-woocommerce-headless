@@ -3,6 +3,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import styles from "./SideMenu.module.scss";
 import { usePathname } from "next/navigation";
+import { cx } from "@/utils/functions";
 
 const SideMenu = ({ handleClose, handleSearch, handleCart }) => {
   const path = usePathname();
@@ -42,7 +43,6 @@ const SideMenu = ({ handleClose, handleSearch, handleCart }) => {
     { name: "Collections", href: "/collections", category: 1 },
     { name: "Best Selling", href: "/best-selling", category: 1 },
     { name: "contact", href: "/contact", category: 2 },
-    { name: "shipping", href: "/shipping", category: 2 },
   ];
   return (
     <motion.div
@@ -58,6 +58,7 @@ const SideMenu = ({ handleClose, handleSearch, handleCart }) => {
             if ("/" === path) handleClose();
           }}
           href={"/"}
+          className={styles.logo}
         >
           VaseStylé
         </Link>
@@ -104,12 +105,15 @@ const SideMenu = ({ handleClose, handleSearch, handleCart }) => {
           </motion.li>
           <motion.li variants={childAnimation}>
             <button
-              className={styles.link_hover}
+              className={cx(styles.link_hover, styles.bag_btn)}
               type="button"
               title="cart"
               onClick={handleCart}
             >
-              bag [0]
+              bag
+              <div className={styles.bag_indicator}>
+                <div className={styles.bag_indicator_content}>0</div>
+              </div>
             </button>
           </motion.li>
         </ul>
@@ -143,6 +147,17 @@ const SideMenu = ({ handleClose, handleSearch, handleCart }) => {
               </Link>
             </motion.li>
           </ul>
+        </ul>
+        <ul className={styles.flex}>
+          <motion.li variants={childAnimation}>
+            <Link href={"/privacy-policy"}>Privacy Policy</Link>
+          </motion.li>
+          <motion.li variants={childAnimation}>
+            <Link href={"/terms-and-conditions"}>Terms Of Service</Link>
+          </motion.li>
+          <motion.li variants={childAnimation}>
+            <Link href={"/refund-policy"}>Refund Policy</Link>
+          </motion.li>
         </ul>
         <motion.p variants={childAnimation}>
           ©{new Date().getFullYear()} VaseStylé

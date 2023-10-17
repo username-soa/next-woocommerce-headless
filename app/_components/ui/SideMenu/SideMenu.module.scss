@@ -1,3 +1,5 @@
+@import "../../../variables.scss";
+
 .container {
   inset: 0;
   z-index: 999;
@@ -5,7 +7,7 @@
   padding: 1.5rem 1rem;
   background-color: hsla(0, 0%, 100%, 0.8);
   backdrop-filter: blur(24px);
-  gap: 1rem;
+  gap: 2rem;
   display: flex;
   flex-direction: column;
 }
@@ -13,6 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0.85rem 0;
   .close_btn {
     all: unset;
     display: flex;
@@ -22,8 +25,8 @@
     margin-right: 0.15rem;
 
     svg {
-      width: 1.1rem;
-      height: 1.1rem;
+      width: $lg;
+      height: $lg;
       fill: #000;
       transition: transform 0.3s ease;
     }
@@ -34,41 +37,60 @@
     }
   }
 }
+.logo {
+  font-size: $base;
+}
 .content {
   flex: 1;
   ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
     list-style: none;
   }
   button,
   a {
     padding: 0;
     width: fit-content;
-    font-size: 0.95rem;
+    font-size: $sm;
     text-transform: capitalize;
     background-color: transparent;
   }
   .link_hover {
-    position: relative;
-    &:after {
-      left: 0;
-      width: 0;
-      bottom: 4px;
-      height: 1.75px;
-      border-radius: 9999px;
-      content: "";
-      position: absolute;
-      visibility: hidden;
-      background-color: #000;
-      transition: all 0.4s cubic-bezier(0.65, 0, 0.35, 1);
-    }
-    &:hover:after {
-      width: 100%;
-      visibility: visible;
+    transition: opacity 200ms ease 100ms;
+    &:hover {
+      opacity: 0.8;
     }
   }
 }
+.bag_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.bag_indicator {
+  width: 22px;
+  height: 22px;
+  transition: width 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+  .bag_indicator_content {
+    font-size: 10px;
+    line-height: 1;
+    display: flex;
+    width: 22px;
+    height: 22px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #000;
+    opacity: 1;
+    transition: opacity 200ms ease 100ms, transform 200ms ease 100ms,
+      background 300ms ease 0s;
+  }
+}
 .bottom {
-  font-size: 0.8rem;
+  font-size: $xs;
   ul {
     list-style: none;
     li {

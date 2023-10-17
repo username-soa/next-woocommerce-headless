@@ -10,11 +10,6 @@
     padding-bottom: 0.5em;
     text-align: center;
   }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 1rem;
-  }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -24,15 +19,7 @@
     h1 {
       font-size: 16px;
     }
-    .grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
   }
 }
 @media only screen and (max-width: 720px) {
-  .container {
-    .grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
 }

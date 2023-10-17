@@ -3,6 +3,7 @@ import { ProductCard } from "@/components/cards";
 import styles from "./CollectionDetails.module.scss";
 import { PageHeader, Container } from "@/components/ui";
 import { collections, products } from "@/utils/data";
+import { Grid } from "@/components/sections";
 
 // TODO generate dynamic metadata
 
@@ -26,7 +27,7 @@ export default async function CollectionDetails({ params }) {
         qte={10}
       />
 
-      <div className={styles.grid}>
+      <Grid classNames={styles.margin}>
         {products?.map((item, index) => {
           return (
             <ProductCard
@@ -38,7 +39,7 @@ export default async function CollectionDetails({ params }) {
             />
           );
         })}
-      </div>
+      </Grid>
     </Container>
   );
 }

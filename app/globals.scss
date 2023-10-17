@@ -22,7 +22,7 @@
   background: #000;
 }
 html {
-  /* font-size: 62.5%; */
+  font-size: 62.5%;
   scroll-behavior: smooth;
   scrollbar-width: thin !important;
 }
@@ -50,7 +50,12 @@ main {
   position: relative;
   /* overflow-x: hidden; */
   background-color: #fff;
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 70px);
+}
+@media only screen and (max-width: 768px) {
+  main {
+    min-height: calc(100vh - 67px);
+  }
 }
 
 /* Remove default margin */

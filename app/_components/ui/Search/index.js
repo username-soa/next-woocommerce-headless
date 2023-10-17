@@ -140,8 +140,8 @@ const Search = ({ handleClose }) => {
               ></path>
             </svg>
             <input
-              type="text"
               autoFocus
+              type="text"
               autoComplete="off"
               onKeyDown={handleSearch}
               className={styles.search_input}

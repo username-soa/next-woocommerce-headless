@@ -14,7 +14,7 @@ const Collections = () => {
       <div className={styles.page_header}>
         <h1 className={styles.page_header_header}>Collections</h1>
         <div className={styles.page_header_text}>
-          <p>
+          <p className={styles.description}>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry&apos;s standard dummy
             text ever since the 1500s, when an unknown printer took a galley of

@@ -1,6 +1,7 @@
 import Hero from "./Hero";
-import Prose from "./Prose";
 import FAQs from "./FAQs";
+import Grid from "./Grid";
+import Prose from "./Prose";
 import StickySection from "./StickySection";
 import ContactSection from "./ContactSection";
 import SimilarProducts from "./SimilarProducts";
@@ -10,6 +11,7 @@ import BeastSellingSection from "./BestSellingSection";
 export {
   FAQs,
   Hero,
+  Grid,
   Prose,
   StickySection,
   ContactSection,

@@ -2,6 +2,7 @@ import { products } from "@/utils/data";
 import styles from "./Search.module.scss";
 import { Container } from "@/components/ui";
 import { ProductCard } from "@/components/cards";
+import { Grid } from "@/components/sections";
 
 export const metadata = {
   title: "Search",
@@ -19,7 +20,6 @@ async function getProducts(term) {
 
 export default async function SearchPage({ searchParams }) {
   const { sort, q: searchValue } = searchParams;
-  console.log(searchValue);
   const results = await getProducts(searchValue);
   const resultsText = results.length > 1 ? "results" : "result";
   return (
@@ -33,7 +33,7 @@ export default async function SearchPage({ searchParams }) {
         </p>
       ) : null}
       {/* {products.length ? <div className={styles.grid}></div>: null} */}
-      <div className={styles.grid}>
+      <Grid>
         {products.map((item, index) => {
           return (
             <ProductCard
@@ -45,7 +45,7 @@ export default async function SearchPage({ searchParams }) {
             />
           );
         })}
-      </div>
+      </Grid>
     </Container>
   );
 }

@@ -16,7 +16,7 @@ import { cx } from "@/utils/functions";
 const Header = () => {
   const path = usePathname();
   const { scrollY } = useScroll();
-  const padding = useTransform(scrollY, [0, 100], [0, 15]);
+  const padding = useTransform(scrollY, [0, 100], [0, 18]);
   const radius = useTransform(scrollY, [0, 100], [0, 15]);
   const borderWidth = useTransform(scrollY, [0, 100], [0, 1]);
   const springRadius = useSpring(radius);

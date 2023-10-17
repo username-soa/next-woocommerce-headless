@@ -1,12 +1,16 @@
+@import "../../../variables.scss";
+
 .h1 {
   font-weight: 300;
   text-align: center;
   padding-bottom: 3rem;
   text-transform: capitalize;
-  font-size: clamp(26px, 15.4366197183px + 2.1126760563vw, 56px);
+  font-size: $responsive_f4;
+  line-height: 1.5;
 }
 .p {
   text-align: center;
+  font-size: $base;
   padding-bottom: 6rem;
   a {
     all: unset;
@@ -33,9 +37,10 @@
   padding: 0.25rem 0.5rem;
   text-transform: uppercase;
   background-color: transparent;
+  font-size: $base;
   svg {
-    width: 0.8rem;
-    height: 0.5rem;
+    height: 1rem;
+    width: 1.3rem;
     margin-left: 0.6rem;
     transform: rotate(-180deg);
   }
@@ -45,13 +50,18 @@
     padding-bottom: 1.5rem;
   }
   .p {
+    font-size: $xs;
     padding-bottom: 3rem;
   }
   .content {
-    padding: 3rem 0;
+    margin: 1.5rem 0;
   }
   .back_to_top {
-    font-size: 0.9rem;
+    font-size: $xs;
     margin: 3rem auto 0;
+    svg {
+      width: 0.8rem;
+      height: 0.5rem;
+    }
   }
 }

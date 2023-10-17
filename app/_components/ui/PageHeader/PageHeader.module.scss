@@ -1,3 +1,5 @@
+@import "../../../variables.scss";
+
 .collection_hero {
   gap: 4rem;
   display: flex;
@@ -35,8 +37,8 @@
   justify-content: flex-end;
   align-items: flex-start;
   position: absolute;
-  padding: 0 clamp(20px, 3vw, 60px) clamp(20px, 3vw, 30px)
-    clamp(20px, 3vw, 60px);
+  padding: 0 clamp(15px, 2vw, 60px) clamp(15px, 2vw, 20px)
+    clamp(15px, 2vw, 60px);
   color: #fff;
   background: linear-gradient(
     0deg,
@@ -45,18 +47,18 @@
   );
   pointer-events: none;
   .title_h2 {
-    font-size: clamp(40px, 15.3521126761px + 4.9295774648vw, 110px);
+    font-size: $responsive_f3;
     font-weight: bold;
-    line-height: 100%;
+    line-height: 1.5;
     background: linear-gradient(180deg, #fff, #adadad);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   .title_h6 {
-    font-size: clamp(16px, 14.5915492958px + 0.2816901408vw, 20px);
+    font-size: $responsive_f9;
     margin-bottom: 0.25rem;
-    line-height: 100%;
+    line-height: 1.5;
     background: linear-gradient(180deg, #fff, #adadad);
     background-clip: text;
     -webkit-background-clip: text;
@@ -66,10 +68,11 @@
 .collection_desc {
   text-align: center;
   margin-bottom: 1em;
-  font-size: 22px;
   font-size: clamp(16px, 13.1830985915px + 0.5633802817vw, 24px);
   line-height: 200%;
   p {
+    font-size: $lg;
+    line-height: 1.5;
     font-weight: 300;
   }
 }
@@ -79,14 +82,16 @@
   }
   .header_overlay {
     .title_h2 {
-      font-size: 1.5rem;
+      font-size: $lg;
     }
     .title_h6 {
-      font-size: 0.5rem;
+      font-size: $sm;
     }
   }
   .collection_desc {
-    font-size: 0.85rem;
+    p {
+      font-size: $sm;
+    }
   }
 }
 @media only screen and (max-width: 576px) {

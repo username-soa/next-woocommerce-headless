@@ -1,10 +1,12 @@
+@import "../../../variables.scss";
+
 .accordion_btn {
   gap: 1rem;
   width: 100%;
   display: flex;
   cursor: pointer;
   padding: 2rem 0;
-  font-size: 2rem;
+  font-size: $base;
   color: #0a0400;
   text-align: left;
   position: relative;
@@ -23,8 +25,9 @@
   flex-direction: column;
   row-gap: 0.75rem;
   padding-bottom: 1.5rem;
-  font-size: 1.15rem;
+  font-size: $sm;
   line-height: 1.5;
+  font-weight: 100;
   a {
     cursor: pointer;
     width: fit-content;

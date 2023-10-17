@@ -51,8 +51,8 @@ const ContactSection = ({ email, phone }) => {
       <div className={styles.content}>
         <motion.h1 variants={childAnimation}>Get In Touch</motion.h1>
         <motion.p variants={childAnimation}>
-          We&apos;d love to hear from you! Get in touch and our team will be
-          with you as soon as possible.
+          We&apos;d love to hear from you!
+          <br /> Get in touch and our team will be with you as soon as possible.
         </motion.p>
       </div>
       <div className={styles.links_wrp}>

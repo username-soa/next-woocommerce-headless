@@ -1,9 +1,12 @@
+@import "../../../variables.scss";
+
 .container {
   top: 100px;
   height: 100vh;
   padding: 1rem 3rem;
   position: sticky;
   display: flex;
+  gap: 1rem;
   flex-direction: column;
   padding-top: 18vh;
   margin: 0 auto;
@@ -14,17 +17,17 @@
   }
   h1 {
     text-transform: capitalize;
-    font-size: 20px;
-    line-height: 1.35;
+    font-size: $responsive_f6;
+    line-height: 1.25;
     padding-bottom: 0.5em;
   }
   .pricing_wrp {
     line-height: 1;
-    font-size: 13px;
+    font-size: $sm;
     color: #757575;
   }
   .product_description {
-    font-size: 0.9rem;
+    font-size: $base;
     color: rgb(0 0 0/1);
     line-height: 1.5;
   }
@@ -47,6 +50,10 @@
     .top,
     .buttons_wrp {
       display: none;
+    }
+    .product_description {
+      font-size: $sm;
+      padding: 2rem 0;
     }
   }
 }

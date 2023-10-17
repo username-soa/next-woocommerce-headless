@@ -1,3 +1,5 @@
+@import "../../../variables.scss";
+
 .container {
   flex: 1;
   display: flex;
@@ -65,11 +67,12 @@
   flex-direction: column;
   justify-content: center;
   h1 {
-    font-size: 120px;
     font-weight: 300;
     letter-spacing: 0;
-    line-height: 120px;
-    padding-bottom: 1rem;
+    font-size: $responsive_f4;
+    line-height: 1.5;
+    padding-bottom: 2rem;
+    text-align: center;
   }
   h6 {
     font-size: 32px;
@@ -79,7 +82,9 @@
 
   p {
     font-weight: 400;
+    font-size: $base;
     line-height: 26px;
+    text-align: center;
     padding-bottom: 1rem;
   }
 }
@@ -122,12 +127,12 @@
     .link_top {
       gap: 0.5rem;
       p {
-        font-size: 1.1rem;
+        font-size: $xs;
       }
     }
     svg {
-      width: 1.5rem;
-      height: 1.5rem;
+      width: 1.7rem;
+      height: 1.7rem;
     }
     .share_svg {
       width: 14px;
@@ -136,8 +141,8 @@
   }
   .content {
     h1 {
-      font-size: 2rem;
-      line-height: 2rem;
+      font-size: $_4xl;
+      line-height: $_4xl;
     }
     h6 {
       font-size: 1rem;
@@ -145,7 +150,8 @@
     }
 
     p {
-      line-height: 1.5rem;
+      line-height: 1.4;
+      font-size: $sm;
       padding-bottom: 0;
     }
   }

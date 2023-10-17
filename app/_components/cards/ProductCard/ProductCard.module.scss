@@ -1,17 +1,21 @@
+@import "../../../variables.scss";
+
 .container {
-  gap: 0.5rem;
+  gap: 1.25rem;
   display: flex;
   flex-direction: column;
 }
 .product_info {
   gap: 0.25rem;
-  display: grid;
-  grid-template-columns: 1fr auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   a {
+    flex: 1;
     display: inline-block;
     width: 100%;
-    font-size: 16px;
-    line-height: 1.25;
+    font-size: $base;
+    line-height: 1.5;
     text-transform: capitalize;
     font-family: inherit;
     text-overflow: ellipsis;
@@ -19,9 +23,9 @@
     white-space: nowrap;
   }
   span {
-    font-size: 13px;
+    font-size: $sm;
     color: #757575;
-    line-height: 1.25;
+    line-height: 1.5;
   }
 }
 .image_wrp {
@@ -41,7 +45,12 @@
 @media only screen and (max-width: 768px) {
   .product_info {
     a {
-      font-size: 14px;
+      font-size: $sm;
+    }
+    span {
+      font-size: $xs;
+      color: #757575;
+      line-height: 1.5;
     }
   }
 }
